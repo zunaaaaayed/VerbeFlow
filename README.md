@@ -9,11 +9,30 @@ French verbs have a lot of outfits. VerbeFlow helps you recognise them.
 
 Keep it beside your favourite webpage, look up a verb, and explore its conjugations, clear explanations, and French–English examples. The endings stand out in orange, so the little changes are easier to spot.
 
-You get **110 verbs**, **six tenses**, and **660 bilingual examples** to explore offline. Save up to **10 favourites**, listen to French pronunciation with an installed French voice, and switch between a cosy light theme and a charcoal dark theme.
+You get **110 verbs**, **six tenses**, and **660 bilingual examples** to explore offline. Save up to **10 favourites**, listen to French pronunciation with an available French voice, and switch between a cosy light theme and a charcoal dark theme.
+
+Enjoying your little French companion? [Give VerbeFlow a star on GitHub](https://github.com/zunaaaaayed/VerbeFlow) ⭐ It helps other learners find it!
 
 ## Install it, one click at a time
 
-You’ll need **Google Chrome on a computer**. These steps are for the downloadable version, which you add to Chrome yourself.
+You’ll need a **desktop browser with extension side panels**, on **Windows, macOS, or Linux**. These steps are for the downloadable version, which you add to your browser yourself.
+
+### Which browsers can join the party?
+
+**Chrome** is the browser used for VerbeFlow’s hands-on checks so far. Use an up-to-date version; this release needs Chrome 116 or newer.
+
+**Microsoft Edge, Brave, Vivaldi, and desktop Chromium** are also candidates, provided their current version supports extension side panels. [Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions/developer-guide/sidebar) and [Vivaldi](https://help.vivaldi.com/developers/web/vivaldi-web-panels-for-web-developers/) document that support; [Brave’s extension side-panel work](https://github.com/brave/brave-browser/issues/31328) is recorded in its browser project. VerbeFlow has not yet been tested end to end in those browsers, and French voices or automatic appearance detection may behave differently.
+
+Sharing the Chromium family tree does not guarantee every browser has the same features. **Opera and other Chromium browsers are not confirmed for this release.** A regular browser sidebar is not always the same as an extension side panel. This version is not intended for Firefox, Safari, or mobile browsers.
+
+In the installation steps, use the Extensions page for your browser:
+
+- **Chrome or Chromium:** type **chrome://extensions** in the address bar.
+- **Microsoft Edge:** type **edge://extensions**.
+- **Brave:** type **brave://extensions**.
+- **Vivaldi:** type **vivaldi://extensions**.
+
+The steps below use Chrome’s button names. Other browsers may word things slightly differently.
 
 ### 1. Download VerbeFlow
 
@@ -24,28 +43,122 @@ You’ll need **Google Chrome on a computer**. These steps are for the downloada
 
 ### 2. Unpack it and give it a home
 
-1. On a **Mac**, double-click **VerbeFlow-main.zip**. A folder called **VerbeFlow-main** should appear.
-2. On **Windows**, right-click **VerbeFlow-main.zip**, choose **Extract All**, then click **Extract**.
-3. Move the unpacked **VerbeFlow-main** folder somewhere you’ll keep it, such as **Documents**.
+1. Find **VerbeFlow-main.zip** in **Downloads**.
+2. On a **Mac**, double-click it. On **Windows**, right-click it, choose **Extract All**, then click **Extract**. On **Linux**, right-click it in your file manager and choose **Extract Here**, **Extract To**, or **Extract**, depending on your desktop.
+3. Move the unpacked **VerbeFlow-main** folder somewhere you’ll keep it, such as **Documents** or your **Home** folder.
 4. Open that folder. You should see **README.md**, **manifest.json**, and an **assets** folder. If you see another **VerbeFlow-main** folder instead, open that inner folder.
-5. Keep this folder in its new home after installation. Chrome will continue using the files inside it.
+5. Keep this folder in its new home after installation. Your browser will continue using the files inside it.
 
-### 3. Add it to Chrome
+### 3. Add it to your browser
 
-1. Open **Google Chrome**.
-2. Click the address bar at the top, type **chrome://extensions**, and press **Enter**.
+1. Open your chosen browser.
+2. Click the address bar, enter your browser’s **Extensions page** from the list above, and press **Enter**.
 3. Turn on **Developer mode** in the top-right corner. That’s just Chrome’s name for this setting; you won’t need to write any code.
 4. Click **Load unpacked**, which appears near the top-left corner.
 5. Choose the unpacked **VerbeFlow-main** folder from step 2. Choose the folder that contains **manifest.json**, rather than the ZIP file or the assets folder.
 6. Click **Select Folder**, **Select**, or **Open**, depending on your computer.
-7. Look for a **VerbeFlow** card in Chrome. Keep its on/off switch turned on.
+7. Look for a **VerbeFlow** card in the Extensions page. Keep its on/off switch turned on.
 
 ### 4. Put it within easy reach
 
-1. Click Chrome’s **puzzle-piece icon** near the top-right corner.
+1. Click your browser’s **Extensions** button near the address bar. In Chrome, it looks like a puzzle piece.
 2. Find **VerbeFlow** in the list.
-3. Click the **pin** beside it. The VerbeFlow logo should now stay beside the address bar.
+3. Click the **pin** beside it, or choose your browser’s **Show in toolbar** option. The VerbeFlow logo should now stay beside the address bar.
 4. Click that logo. VerbeFlow opens in a **side panel**, beside your webpage. Bonjour, verbs!
+
+## Feeling techie? Take the terminal route
+
+Prefer a few commands to a ZIP file? This route downloads VerbeFlow with Git on all three operating systems. Start with a compatible browser already installed. Your browser will ask you to approve the extension after the download. We’ll finish with a few clicks.
+
+If `git --version` already works, skip the Git installation step for your system. These commands assume you don’t already have a folder named **VerbeFlow** in your home folder. If you do, use the update command below instead, or choose a different folder name.
+
+### macOS — Terminal
+
+1. Open **Terminal** from Applications → Utilities.
+2. If Git is missing, run this command, complete Apple’s installation window, then reopen Terminal:
+
+   ```sh
+   xcode-select --install
+   ```
+
+3. Download VerbeFlow and show the folder you’ll select in your browser:
+
+   ```sh
+   git clone https://github.com/zunaaaaayed/VerbeFlow.git "$HOME/VerbeFlow"
+   cd "$HOME/VerbeFlow"
+   pwd
+   ```
+
+### Windows — PowerShell
+
+1. Open **PowerShell** from the Start menu.
+2. If Git is missing, run:
+
+   ```powershell
+   winget install --id Git.Git -e --source winget
+   ```
+
+   Follow the installer, then close and reopen PowerShell. If `winget` is unavailable, use the [Git for Windows installer](https://git-scm.com/install/windows).
+
+3. Download VerbeFlow and show its folder:
+
+   ```powershell
+   git clone https://github.com/zunaaaaayed/VerbeFlow.git "$HOME\VerbeFlow"
+   Set-Location "$HOME\VerbeFlow"
+   (Get-Location).Path
+   ```
+
+### Linux — Terminal
+
+1. Open your desktop’s **Terminal**.
+2. If Git is missing, use **one** installation command that matches your distribution:
+
+   **Ubuntu / Debian:**
+
+   ```sh
+   sudo apt-get update
+   sudo apt-get install git
+   ```
+
+   **Fedora:**
+
+   ```sh
+   sudo dnf install git
+   ```
+
+   **Arch Linux:**
+
+   ```sh
+   sudo pacman -S git
+   ```
+
+   For another distribution, follow [Git’s Linux installation guide](https://git-scm.com/install/linux).
+
+3. Download VerbeFlow and show its folder:
+
+   ```sh
+   git clone https://github.com/zunaaaaayed/VerbeFlow.git "$HOME/VerbeFlow"
+   cd "$HOME/VerbeFlow"
+   pwd
+   ```
+
+### Finish in your browser — same idea on all three systems
+
+1. Open your browser’s **Extensions page**, using the address listed above.
+2. Turn on **Developer mode**.
+3. Click **Load unpacked**.
+4. Select the **VerbeFlow** folder printed by your terminal. It lives in your home folder and contains **manifest.json**. It has no **-main** suffix when downloaded with Git.
+5. Pin the extension and click its logo to open the side panel.
+
+That’s the whole setup: no extra build or package installation is needed for VerbeFlow itself. Git installation options come from the [official Git guide](https://git-scm.com/install/).
+
+To update a copy installed this way, close the side panel and run the following in Terminal or PowerShell:
+
+```sh
+git -C "$HOME/VerbeFlow" pull --ff-only
+```
+
+Then open your browser’s Extensions page and click VerbeFlow’s **reload arrow**. If Git reports local changes or a conflict, stop and keep your edits; the ZIP-update steps are intended for an unmodified download.
 
 ## Make yourself at home
 
@@ -71,7 +184,7 @@ There’s room for **10 saved verbs**. When your shelf is full, remove one to ma
 ### Choose your lighting
 
 1. Click the **sun or moon** at the top of VerbeFlow to switch between light and dark mode.
-2. Your choice stays selected when you change pages or reopen Chrome.
+2. Your choice stays selected when you change pages or reopen your browser.
 3. Click **Auto**, beside the switch, to let VerbeFlow follow whether the current page is light or dark.
 4. For this to work automatically across different websites, click **Enable automatic page detection** at the bottom of the panel and review Chrome’s permission request.
 5. You can decline that request and keep using the manual switch. Where page detection is unavailable, Auto follows your browser’s light or dark preference.
@@ -86,7 +199,9 @@ Both modes use VerbeFlow’s own colours. Your webpage only helps choose which m
 4. On a **Mac**, open **System Settings**, go to **Accessibility**, and look for **Read & Speak**, **Spoken Content**, or the speech/voice settings. Use the voice list to add a French voice. The wording varies with your macOS version. [Apple’s voice guide](https://support.apple.com/guide/mac-help/change-the-voice-your-mac-uses-to-speak-text-mchlp2290/mac) can help you find it.
 5. On **Windows**, open **Settings**, go to **Time & language**, then **Speech**. Look for **Manage voices** or **Add voices**, and add French. If Windows asks you to download a speech pack, let it finish. [Microsoft’s voice guide](https://support.microsoft.com/en-us/accessibility/windows/narrator/appendix-a-supported-languages-and-voices) has more help.
 
-VerbeFlow uses an available French voice. Pronunciation and offline playback depend on the voice installed on your computer.
+On **Linux**, voice support depends on your browser build and distribution; there isn’t one voice-installation menu that works everywhere. Check your distribution’s speech/accessibility options for a French voice, restart your browser, and try Listen again. Some builds may not expose a French voice even when another app can speak French. Reading, searching, and saved verbs still work when Listen is unavailable.
+
+VerbeFlow uses an available French voice. Pronunciation and offline playback depend on the voices your browser can access.
 
 ## Updates and little hiccups
 
@@ -95,17 +210,17 @@ VerbeFlow uses an available French voice. Pronunciation and offline playback dep
 1. Download and unpack a fresh copy using the steps above.
 2. Close the VerbeFlow side panel.
 3. Copy the contents of the new unpacked folder into the **same VerbeFlow folder you originally installed**. If your computer asks, replace the old files.
-4. Open **chrome://extensions** in Chrome.
+4. Open your browser’s **Extensions page** from the list above.
 5. Find the VerbeFlow card and click its **circular reload arrow**.
 6. Click the VerbeFlow toolbar logo to reopen it.
 
-Keeping the same folder helps keep the same extension and its saved choices. Removing the extension from Chrome can remove those saved choices too.
+Keeping the same folder helps keep the same extension and its saved choices. Removing the extension from your browser can remove those saved choices too.
 
 ### Can’t find it?
 
 - **No toolbar logo?** Click the puzzle-piece icon and pin VerbeFlow.
-- **Chrome says a file is missing?** Unpack the ZIP first, then choose the folder containing **manifest.json**.
-- **The panel won’t open?** Visit a regular webpage, check that VerbeFlow is turned on at **chrome://extensions**, then click its toolbar logo again.
+- **Your browser says a file is missing?** Unpack the ZIP first, then choose the folder containing **manifest.json**.
+- **The panel won’t open?** Visit a regular webpage, check that VerbeFlow is turned on in your browser’s **Extensions page**, then click its toolbar logo again.
 - **Two VerbeFlow entries?** Keep the copy you want to use. Each copy may have its own saved verbs; removing a copy can delete its saved choices.
 - **A verb is missing?** Try a shorter search, such as **parl**, or a common infinitive. VerbeFlow won’t make up forms for a verb outside its collection.
 
