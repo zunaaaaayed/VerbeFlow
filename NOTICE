@@ -15,6 +15,16 @@ Bundled fonts retain their separate SIL Open Font License, version 1.1:
 The respective copyright notices and complete font licenses accompany the
 font files. The project license does not relicense these font files.
 
+Lefff-derived linguistic resources retain the Lesser General Public License
+for Linguistic Resources (LGPLLR), not the project's AGPL license. Attribution,
+modification notices and complete corresponding source are provided in
+docs/LEFFF_SOURCE.md, vendor/lefff/LICENSE-LGPLLR.txt, and the pinned source
+archive. This covers data/lefff/, src/data/lefff-variants.js and
+src/data/lefff-reference.js. Lefff was
+created by Benoît Sagot, Lionel Clément and collaborators; the packaged
+extraction is by Ludan Stoecklé / RosaeNLG. The import tooling is original
+VerbeFlow code. Resource licenses and notices must accompany redistribution.
+
 Conjugation references are credited in README.md and in the verb records.
 Their names, websites, and third-party content are not relicensed by this
 project. Reference links do not imply affiliation or endorsement.

@@ -1,8 +1,8 @@
 # VerbeFlow brand assets
 
-The book-shaped V with an orange flowing stroke was generated with the built-in image_gen tool, then exported to Chrome's 16, 32, 48 and 128 px PNG sizes with macOS sips. The full-resolution generated master is verbeflow-master.png. It is used by the side-panel header, toolbar action, extension manager and panel favicon. The personal Z creator mark remains separate.
+The book-shaped V with an orange flowing stroke was generated with the built-in image_gen tool, then exported to Chrome's 16, 32, 48 and 128 px PNG sizes with macOS sips. The full-resolution generated master is assets/brand/verbeflow-master.png. It is used by the side-panel header, toolbar action, extension manager and panel favicon. The personal Z creator mark remains separate.
 
-The wordmark is live Cormorant Garamond text, bundled under SIL OFL 1.1 in ../fonts. Keeping the wordmark out of the bitmap preserves readability and accessible text at narrow widths.
+The wordmark is live Cormorant Garamond text, bundled under SIL OFL 1.1 in assets/fonts. Keeping the wordmark out of the bitmap preserves readability and accessible text at narrow widths.
 
 ## Initial generation prompt
 

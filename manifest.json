@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "VerbeFlow — French verbs, explained",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Offline French conjugations, tense formation notes, and bilingual examples.",
   "minimum_chrome_version": "116",
   "permissions": [

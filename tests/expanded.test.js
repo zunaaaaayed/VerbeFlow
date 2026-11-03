@@ -60,5 +60,5 @@ test('choosing a tense/person interpretation opens that precise tense', () => {
  const selected = choices.find(m=>m.tense==='subjunctive' && m.personIndex===2);
  assert.deepEqual(selectionForMatch(selected,'future'),{selected:'parler',tense:'subjunctive'});
  assert.deepEqual(selectionForMatch(lookup('mang')[0],'imperfect'),{selected:'manger',tense:'imperfect'});
- assert.throws(()=>selectionForMatch({infinitive:'inventer',tense:'present'}));
+ assert.throws(()=>selectionForMatch({infinitive:'verbe-inventé',tense:'present'}));
 });

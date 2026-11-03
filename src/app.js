@@ -1,6 +1,6 @@
 import { speechController } from './speech.js';
 import { startPageTheme } from './page-theme.js';
-import { BY_ID } from './data/verbs.js';
+import { CATALOG_BY_ID as BY_ID } from './data/catalog.js';
 import { TENSES } from './data/tenses.js';
 import { conjugate, subject, lookup, selectionForMatch, formation, example } from './engine.js';
 import { readState, saveState, subscribe, MAX_BOOKMARKS, toggleBookmark } from './storage.js';
@@ -12,7 +12,7 @@ app.innerHTML = `
   <header><div class="brand"><img class="brand-mark" src="assets/brand/verbeflow-128.png" srcset="assets/brand/verbeflow-48.png 1x, assets/brand/verbeflow-128.png 2x" alt="" width="42" height="42"><div>VerbeFlow<small>A little French, every day.</small></div></div><div class="appearance-controls"><button id="theme-auto" type="button" class="text-button" title="Follow the active page’s light or dark appearance" hidden>Auto</button><button id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode" title="Switch theme">☾</button></div></header>
   <section class="search-section"><label class="sr-only" for="verb-search">Search French verbs</label><form id="search-form"><div class="search-box"><span aria-hidden="true">⌕</span><input id="verb-search" autocomplete="off" spellcheck="false" placeholder="Try parler, être, or avons…"><button type="submit" aria-label="Search verbs">→</button></div></form><div id="results" role="region" aria-live="polite" aria-label="Search results"></div></section>
   <section class="collection" aria-labelledby="saved-label"><div class="collection-heading"><h2 id="saved-label">Saved verbs</h2><span id="saved-count" aria-live="polite"></span></div><div id="collection-list" class="chips"></div></section>
-  <article><div class="verb-heading"><div><p class="eyebrow">YOUR VERB, UNPACKED</p><h1 id="verb-title" lang="fr" tabindex="-1"></h1><p id="meaning"></p></div><button id="bookmark" class="icon-button" aria-label="Save verb" aria-pressed="false">☆</button></div><div id="metadata" class="metadata"></div>
+  <article><div class="verb-heading"><div><p class="eyebrow" id="coverage-label">YOUR VERB, UNPACKED</p><h1 id="verb-title" lang="fr" tabindex="-1"></h1><p id="meaning"></p></div><button id="bookmark" class="icon-button" aria-label="Save verb" aria-pressed="false">☆</button></div><div id="metadata" class="metadata"></div><p id="reference-note" class="hint" hidden>Reference forms from <a href="https://github.com/RosaeNLG/rosaenlg/tree/745dc50c54690936fba332ca465308c607053e46/packages/french-verbs-lefff" target="_blank" rel="noopener noreferrer">Lefff / RosaeNLG</a>, under <a href="vendor/lefff/LICENSE-LGPLLR.txt" target="_blank" rel="noopener noreferrer">LGPLLR</a>. Independent human review is pending. Auxiliary choice, meanings and examples are not yet reviewed.</p>
   <label class="select-label" for="tense">Explore a tense</label><div class="tense-select"><select id="tense"></select><span id="tense-subtitle"></span></div>
   <section class="conjugation"><div class="section-title"><h2>Conjugation</h2><span id="ending-key">Highlighted endings</span></div><div id="forms"></div></section>
   <section class="formation"><div class="section-title"><h2>How it’s formed</h2></div><p id="formula" class="formula"></p><p id="specific-rule"></p><details><summary>Usage & grammar notes</summary><p id="explanation"></p></details></section>
@@ -52,9 +52,12 @@ function renderCollection() {
 function render() {
   pageTheme?.setPreference(state.theme);
   const v = BY_ID[state.selected], tense = TENSES[state.tense];
+  const reference = v.coverage === 'reference';
   $('verb-title').textContent = v.infinitive;
-  $('meaning').textContent = v.meaning;
-  $('metadata').textContent = `Group ${v.group} · ${v.pattern === 'reflexive' ? 'Reflexive' : v.pattern === 'impersonal' ? 'Impersonal' : v.pattern === 'irregular' ? 'Irregular / spelling change' : v.pattern === 'ir' ? 'Finir pattern' : v.pattern+' pattern'} · Auxiliary: ${v.auxiliary}`;
+  $('coverage-label').textContent = reference ? 'CONJUGATION REFERENCE' : 'YOUR VERB, UNPACKED';
+  $('reference-note').hidden = !reference;
+  $('meaning').textContent = reference ? 'Five simple tenses · reference coverage' : v.meaning;
+  $('metadata').textContent = reference ? 'Lefff 3.4.0 · imported reference · learning notes pending' : `Group ${v.group} · ${v.pattern === 'reflexive' ? 'Reflexive' : v.pattern === 'impersonal' ? 'Impersonal' : v.pattern === 'irregular' ? 'Irregular / spelling change' : v.pattern === 'ir' ? 'Finir pattern' : v.pattern+' pattern'} · Auxiliary: ${v.auxiliary}`;
   const saved = state.bookmarks.includes(v.infinitive);
   $('bookmark').textContent = saved ? '★' : '☆'; $('bookmark').setAttribute('aria-pressed',String(saved)); $('bookmark').setAttribute('aria-label',saved ? 'Unsave verb' : 'Save verb'); $('bookmark').title = saved ? 'Remove from saved verbs' : state.bookmarks.length >= MAX_BOOKMARKS ? '10 verbs saved — remove one to save another' : 'Save verb';
   $('tense').value = state.tense; $('tense-subtitle').textContent = tense.english;
@@ -62,34 +65,41 @@ function render() {
   $('forms').replaceChildren();
   forms.forEach((f,i) => {
     const row = document.createElement('div'); row.className = f.available === false ? 'form-row unavailable' : 'form-row'; row.lang = 'fr';
-    const pronoun = document.createElement('span'); pronoun.textContent = v.pattern === 'impersonal' && i === 2 ? 'il' : subject(i,f.text);
-    if (f.available === false) row.setAttribute('aria-label',`${pronoun.textContent}: not used in this impersonal sense`);
+    const pronoun = document.createElement('span'); pronoun.textContent = reference && i === 0 && /^h/i.test(f.text) ? 'je / j’' : v.pattern === 'impersonal' && i === 2 ? 'il' : subject(i,f.text);
+    if (reference && i === 0 && /^h/i.test(f.text)) pronoun.title = 'Check whether this verb has mute or aspirated h before choosing je or j’.';
+    if (f.available === false) row.setAttribute('aria-label',reference ? `${pronoun.textContent}: auxiliary not reviewed; form unavailable` : `${pronoun.textContent}: not used in this impersonal sense`);
     const word = document.createElement('strong'); word.append(document.createTextNode(f.stem));
     const ending = document.createElement('span'); ending.className = 'ending'; ending.textContent = f.ending; word.append(ending);
     row.append(pronoun,word); $('forms').append(row);
   });
-  $('ending-key').textContent = state.tense === 'passe' ? 'Highlighted participle' : forms.some(f => f.ending) ? 'Highlighted endings' : v.pattern === 'impersonal' ? 'Impersonal il only' : 'Stored forms';
-  $('formula').textContent = tense.formula;
+  $('ending-key').textContent = reference ? state.tense === 'passe' ? 'Auxiliary not reviewed' : 'Whole reference forms' : state.tense === 'passe' ? 'Highlighted participle' : forms.some(f => f.ending) ? 'Highlighted endings' : v.pattern === 'impersonal' ? 'Impersonal il only' : 'Stored forms';
+  $('formula').textContent = reference ? state.tense === 'passe' ? 'Passé composé unavailable for this entry' : 'Reference table; formation explanation pending' : tense.formula;
   $('specific-rule').textContent = formation(v.infinitive,state.tense);
   $('explanation').textContent = tense.explanation;
   shownExample = example(v.infinitive,state.tense);
-  $('example-fr').textContent = shownExample.french; $('example-en').textContent = shownExample.english;
+  document.querySelector('.example').hidden = !shownExample;
+  $('example-fr').textContent = shownExample?.french ?? ''; $('example-en').textContent = shownExample?.english ?? '';
   $('agreement').textContent = state.tense === 'passe' && v.auxiliary === 'être' ? '(e) adds feminine agreement; s adds plural agreement. Vous can be singular or plural. Examples use a masculine singular speaker. (s) marks optional plural vous; on may refer to several people and can take plural agreement in context.' : '';
   renderCollection();
 }
-function showResults() {
+function showResults(limit = 40, focusMore = false) {
   const query = $('verb-search').value; const matches = lookup(query);
   $('results').replaceChildren();
   if (!query.trim()) return;
   if (!matches.length) { const p = document.createElement('p'); p.className = 'no-results'; p.textContent = 'This verb is not in the offline library yet. Try a shorter infinitive prefix, such as parl, or a common verb such as être.'; $('results').append(p); return; }
-  matches.forEach(match => {
+  const count = document.createElement('p'); count.className = 'hint'; count.textContent = `${matches.length} ${matches.length === 1 ? 'result' : 'results'}${matches.length > limit ? ` · showing ${limit}` : ''}`; $('results').append(count);
+  matches.slice(0,limit).forEach(match => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'chip result';
-    b.textContent = match.tense ? `${match.infinitive} → ${TENSES[match.tense].label} (${match.mood}) · ${match.label} · ${match.form}` : `${match.infinitive} · infinitive`;
+    b.textContent = (match.tense ? `${match.infinitive} → ${TENSES[match.tense].label} (${match.mood}) · ${match.label} · ${match.form}${match.variant ? ' · accepted variant' : ''}` : `${match.infinitive} · infinitive`) + (match.coverage === 'reference' ? ' · reference' : '');
     b.addEventListener('click', async () => { await selectMatch(match); $('verb-title').focus(); });
     $('results').append(b);
   });
+  if (matches.length > limit) {
+    const more = document.createElement('button'); more.type = 'button'; more.className = 'text-button'; more.textContent = 'Show more results'; more.addEventListener('click',() => showResults(limit+40,true)); $('results').append(more);
+  }
+  if (focusMore) $('results').querySelectorAll('.result')[Math.max(0,limit-40)]?.focus();
 }
-$('verb-search').addEventListener('input',showResults);
+$('verb-search').addEventListener('input',() => showResults());
 $('verb-search').addEventListener('keydown',e => { if (e.key === 'Escape') { $('verb-search').value = ''; showResults(); } });
 $('search-form').addEventListener('submit',e => {
   e.preventDefault(); const matches = lookup($('verb-search').value);
@@ -109,7 +119,7 @@ const speech = speechController({
   },
   onError:status,
 });
-$('speak').addEventListener('click',() => speech.speak(shownExample.french));
+$('speak').addEventListener('click',() => { if (shownExample) speech.speak(shownExample.french); });
 window.addEventListener('pagehide',() => speech.dispose(),{once:true});
 startPageTheme({toggle:$('theme-toggle'),auto:$('theme-auto'),access:$('page-detection'),preference:state.theme,onPreference:theme=>persist({theme}),report:status})
   .then(controller=>{pageTheme=controller;pageTheme.setPreference(state.theme);})

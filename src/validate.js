@@ -2,6 +2,22 @@ import { VERBS } from './data/verbs.js';
 import { TENSES } from './data/tenses.js';
 import { EXAMPLES } from './data/examples.js';
 import { conjugate, PERSONS } from './engine.js';
+import { REVIEWED_VARIANTS } from './data/lefff-variants.js';
+
+export function validateVariants(variants = REVIEWED_VARIANTS, verbs = VERBS) {
+  const errors = [], seen = new Set();
+  for (const v of variants) {
+    const key = [v.infinitive,v.tense,v.personIndex,v.form].join('|');
+    if (seen.has(key)) errors.push('duplicate variant');
+    seen.add(key);
+    if (!verbs.some(verb => verb.infinitive === v.infinitive)) errors.push('unknown variant verb');
+    if (!Object.hasOwn(TENSES,v.tense)) errors.push('unknown variant tense');
+    if (!Number.isInteger(v.personIndex) || v.personIndex < 0 || v.personIndex > 5) errors.push('invalid variant person');
+    if (typeof v.form !== 'string' || !/^[\p{L}’-]+$/u.test(v.form)) errors.push('invalid variant form');
+    if (!Array.isArray(v.sources) || !v.sources.length || v.sources.some(s => typeof s !== 'string' || !s.startsWith('https://'))) errors.push('missing variant provenance');
+  }
+  return errors;
+}
 // Return every defect so editors can repair a dataset in one pass.
 export function validateData(verbs = VERBS, examples = EXAMPLES, generate = conjugate) {
   const errors = [], ids = new Set();

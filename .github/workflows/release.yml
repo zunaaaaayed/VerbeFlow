@@ -1,0 +1,24 @@
+name: Publish release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify tagged version
+        run: node --input-type=module -e 'import fs from "node:fs"; if (process.env.GITHUB_REF_NAME !== "v"+JSON.parse(fs.readFileSync("manifest.json")).version) process.exit(1)'
+      - run: npm run check
+      - run: python3 scripts/package-release.py --source
+      - name: Publish extension and corresponding source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          gh release create "$GITHUB_REF_NAME" "dist/VerbeFlow-${version}.zip" "dist/VerbeFlow-${version}-source.zip" dist/SHA256SUMS --verify-tag --title "VerbeFlow ${GITHUB_REF_NAME}" --notes-file docs/RELEASE_NOTES.md --latest

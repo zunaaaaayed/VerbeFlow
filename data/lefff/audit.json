@@ -1,0 +1,2940 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "french-verbs-lefff",
+    "version": "3.4.0",
+    "archive": "french-verbs-lefff-3.4.0.tgz",
+    "url": "https://registry.npmjs.org/french-verbs-lefff/-/french-verbs-lefff-3.4.0.tgz",
+    "integrity": "sha512-fHpP4sewTSJ4GYxKpIuUhJq/5F1x7Giyw3Tq4hxHumlNaAgF1Jz9T97AYsHo/LejDbTQaTGaX3jppkvIhgId0w==",
+    "upstreamCommit": "745dc50c54690936fba332ca465308c607053e46",
+    "dataLicense": "LGPLLR",
+    "retrieved": "2026-11-03",
+    "upstream": "https://github.com/RosaeNLG/rosaenlg/tree/745dc50c54690936fba332ca465308c607053e46/packages/french-verbs-lefff"
+  },
+  "reviewStatus": "source-imported-not-human-reviewed",
+  "summary": {
+    "sourceRecords": 7826,
+    "admittedRecords": 7790,
+    "rejectedRecords": 36,
+    "completeSimpleParadigms": 7766,
+    "partialParadigms": 24,
+    "compressionTemplates": 95,
+    "reviewedSearchVariants": 21,
+    "unresolvedDifferences": 0
+  },
+  "bytes": {
+    "sourceArchive": 986059,
+    "sourceJson": 6277936,
+    "packedResource": 332268
+  },
+  "resourceSha256": "0380f7c1634e1c25bea9c085589ec0b54920cb208352e8ed361010540f9117ce",
+  "unavailableCapabilities": [
+    "sense-specific auxiliary choice",
+    "passé composé",
+    "grammatical group",
+    "English meanings",
+    "bilingual examples",
+    "aspirated-h metadata",
+    "frequency ranking",
+    "independent human review"
+  ],
+  "runtimeCoverage": {
+    "learningVerbs": 110,
+    "referenceVerbs": 7666,
+    "referenceTenses": [
+      "present",
+      "imperfect",
+      "future",
+      "conditional",
+      "subjunctive"
+    ]
+  },
+  "admissionPolicy": "Structural admission is not linguistic approval. Only complete simple paradigms enter a clearly labeled reference view; curated learning entries take priority. Missing source slots stay null and partial paradigms remain quarantined. Do not infer auxiliary or group from an infinitive suffix.",
+  "promotionRequirements": [
+    "Choose and document a supported sense and auxiliary.",
+    "Review six-tense forms, including participle agreement and spelling variants.",
+    "Provide meaning, grammatical group, pattern and h-elision metadata.",
+    "Add reviewed learning examples, or explicitly distinguish reference-only coverage in the UI.",
+    "Add independent fixtures and source/review metadata."
+  ],
+  "comparison": {
+    "compared": 3010,
+    "equal": 2989,
+    "differences": [
+      {
+        "infinitive": "pouvoir",
+        "tense": "present",
+        "person": "1s",
+        "personIndex": 0,
+        "curated": "peux",
+        "source": "puis",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://leconjugueur.lefigaro.fr/frmodelepouvoir.php?printOpen=Y&printable=Y"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "present",
+        "person": "1s",
+        "personIndex": 0,
+        "curated": "paie",
+        "source": "paye",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "present",
+        "person": "2s",
+        "personIndex": 1,
+        "curated": "paies",
+        "source": "payes",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "present",
+        "person": "3s",
+        "personIndex": 2,
+        "curated": "paie",
+        "source": "paye",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "present",
+        "person": "3p",
+        "personIndex": 5,
+        "curated": "paient",
+        "source": "payent",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "future",
+        "person": "1s",
+        "personIndex": 0,
+        "curated": "paierai",
+        "source": "payerai",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "future",
+        "person": "2s",
+        "personIndex": 1,
+        "curated": "paieras",
+        "source": "payeras",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "future",
+        "person": "3s",
+        "personIndex": 2,
+        "curated": "paiera",
+        "source": "payera",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "future",
+        "person": "1p",
+        "personIndex": 3,
+        "curated": "paierons",
+        "source": "payerons",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "future",
+        "person": "2p",
+        "personIndex": 4,
+        "curated": "paierez",
+        "source": "payerez",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "future",
+        "person": "3p",
+        "personIndex": 5,
+        "curated": "paieront",
+        "source": "payeront",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "conditional",
+        "person": "1s",
+        "personIndex": 0,
+        "curated": "paierais",
+        "source": "payerais",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "conditional",
+        "person": "2s",
+        "personIndex": 1,
+        "curated": "paierais",
+        "source": "payerais",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "conditional",
+        "person": "3s",
+        "personIndex": 2,
+        "curated": "paierait",
+        "source": "payerait",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "conditional",
+        "person": "1p",
+        "personIndex": 3,
+        "curated": "paierions",
+        "source": "payerions",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "conditional",
+        "person": "2p",
+        "personIndex": 4,
+        "curated": "paieriez",
+        "source": "payeriez",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "conditional",
+        "person": "3p",
+        "personIndex": 5,
+        "curated": "paieraient",
+        "source": "payeraient",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "subjunctive",
+        "person": "1s",
+        "personIndex": 0,
+        "curated": "paie",
+        "source": "paye",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "subjunctive",
+        "person": "2s",
+        "personIndex": 1,
+        "curated": "paies",
+        "source": "payes",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "subjunctive",
+        "person": "3s",
+        "personIndex": 2,
+        "curated": "paie",
+        "source": "paye",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      },
+      {
+        "infinitive": "payer",
+        "tense": "subjunctive",
+        "person": "3p",
+        "personIndex": 5,
+        "curated": "paient",
+        "source": "payent",
+        "resolution": "accepted-variant",
+        "sources": [
+          "https://www.larousse.fr/dictionnaires/francais/payer/58819",
+          "https://www.dictionnaire-academie.fr/article/A8P0725"
+        ]
+      }
+    ],
+    "missing": [],
+    "excluded": [
+      {
+        "infinitive": "se lever",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "s’habiller",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "se laver",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "se coucher",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "se réveiller",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "se promener",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "s’appeler",
+        "reason": "source does not encode reflexive sense or agreement"
+      },
+      {
+        "infinitive": "se préparer",
+        "reason": "source does not encode reflexive sense or agreement"
+      }
+    ]
+  },
+  "rejected": [
+    {
+      "infinitive": "accroire",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "avenir",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "béer",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "capeyer",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "chaloir",
+      "reasons": [
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "choir",
+      "reasons": [
+        "invalid six-person array: I"
+      ]
+    },
+    {
+      "infinitive": "clamecer",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "clore",
+      "reasons": [
+        "invalid six-person array: I"
+      ]
+    },
+    {
+      "infinitive": "contrefiche",
+      "reasons": [
+        "not an admitted infinitive identity"
+      ]
+    },
+    {
+      "infinitive": "déchoir",
+      "reasons": [
+        "invalid six-person array: I"
+      ]
+    },
+    {
+      "infinitive": "enclore",
+      "reasons": [
+        "invalid six-person array: I"
+      ]
+    },
+    {
+      "infinitive": "faseyer",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "fiche",
+      "reasons": [
+        "not an admitted infinitive identity"
+      ]
+    },
+    {
+      "infinitive": "forclore",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "forfaire",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "férir",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "gésir",
+      "reasons": [
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "issir",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "langueyer",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "occire",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "parfaire",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "quérir",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "raire",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "rassir",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "ravoir",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "revoici",
+      "reasons": [
+        "not an admitted infinitive identity",
+        "infinitive identity mismatch",
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "revoilà",
+      "reasons": [
+        "not an admitted infinitive identity",
+        "infinitive identity mismatch",
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "sourdre",
+      "reasons": [
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "stupéfaire",
+      "reasons": [
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "surseoir",
+      "reasons": [
+        "invalid six-person array: I",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "uw",
+      "reasons": [
+        "not an admitted infinitive identity",
+        "infinitive identity mismatch",
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "uwSe",
+      "reasons": [
+        "not an admitted infinitive identity",
+        "infinitive identity mismatch",
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "voici",
+      "reasons": [
+        "not an admitted infinitive identity",
+        "infinitive identity mismatch",
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "voilà",
+      "reasons": [
+        "not an admitted infinitive identity",
+        "infinitive identity mismatch",
+        "invalid six-person array: P",
+        "invalid six-person array: I",
+        "invalid six-person array: F",
+        "invalid six-person array: C",
+        "invalid six-person array: S"
+      ]
+    },
+    {
+      "infinitive": "échoir",
+      "reasons": [
+        "invalid six-person array: I"
+      ]
+    },
+    {
+      "infinitive": "éclore",
+      "reasons": [
+        "invalid six-person array: I"
+      ]
+    }
+  ],
+  "partial": [
+    {
+      "infinitive": "brouillasser",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "bruiner",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "bruire",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "3s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        }
+      ]
+    },
+    {
+      "infinitive": "brumasser",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "brumer",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "crachiner",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "déluger",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "ensuivre",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "1s"
+        },
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        }
+      ]
+    },
+    {
+      "infinitive": "falloir",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "1s"
+        },
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "floconner",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "frimasser",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "grêler",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "messeoir",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "1s"
+        },
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        }
+      ]
+    },
+    {
+      "infinitive": "mouillasser",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "neiger",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "ouïr",
+      "unavailable": [
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "3s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "3s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "pleuvasser",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "pleuviner",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "pleuvoir",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "1s"
+        },
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        }
+      ]
+    },
+    {
+      "infinitive": "pleuvoter",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "pluvioter",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "seoir",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "1s"
+        },
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        }
+      ]
+    },
+    {
+      "infinitive": "vaser",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    },
+    {
+      "infinitive": "venter",
+      "unavailable": [
+        {
+          "tense": "present",
+          "person": "2s"
+        },
+        {
+          "tense": "present",
+          "person": "1p"
+        },
+        {
+          "tense": "present",
+          "person": "2p"
+        },
+        {
+          "tense": "present",
+          "person": "3p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2s"
+        },
+        {
+          "tense": "imperfect",
+          "person": "1p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "2p"
+        },
+        {
+          "tense": "imperfect",
+          "person": "3p"
+        },
+        {
+          "tense": "future",
+          "person": "1s"
+        },
+        {
+          "tense": "future",
+          "person": "2s"
+        },
+        {
+          "tense": "future",
+          "person": "1p"
+        },
+        {
+          "tense": "future",
+          "person": "2p"
+        },
+        {
+          "tense": "future",
+          "person": "3p"
+        },
+        {
+          "tense": "conditional",
+          "person": "1s"
+        },
+        {
+          "tense": "conditional",
+          "person": "2s"
+        },
+        {
+          "tense": "conditional",
+          "person": "1p"
+        },
+        {
+          "tense": "conditional",
+          "person": "2p"
+        },
+        {
+          "tense": "conditional",
+          "person": "3p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2s"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "1p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "2p"
+        },
+        {
+          "tense": "subjunctive",
+          "person": "3p"
+        }
+      ]
+    }
+  ]
+}

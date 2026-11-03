@@ -58,7 +58,6 @@ CORE_VERBS.find(v => v.infinitive === 'voyager').overrides = {imperfect:['voyage
 const notes = {
  passer:'Supported transitive sense: spend time, with avoir. Passing through a place may use être.',
  voyager:'Keep e after g before a or o; omit the extra e before i.',
- payer:'This table uses paie / paier-. Paye / payer- are also accepted variants.',
  préférer:'Traditional future spelling préférer- is shown; préfèrer- is also accepted under the 1990 spelling reforms.',
  espérer:'Traditional future spelling espérer- is shown; espèrer- is also accepted under the 1990 spelling reforms.',
  habiter:'The h is mute: je becomes j’habite.',

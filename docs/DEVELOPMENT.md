@@ -1,6 +1,6 @@
 # VerbeFlow maintainer guide
 
-User-facing installation and setup are in README.md. This file contains development, architecture, validation and browser-test notes. See DATA_CONTRACTS.md for the linguistic contracts.
+User-facing installation and setup are in README.md. This file contains development, architecture, validation and browser-test notes. See docs/DATA_CONTRACTS.md for the linguistic contracts.
 
 ## Development
 
@@ -9,6 +9,36 @@ Use Node.js 22+: `npm run check` runs data validation, app syntax and Node tests
 `npm run preview` serves `http://127.0.0.1:8765/sidepanel.html`. A web preview uses localStorage, not Chrome APIs; it cannot verify extension storage, panel opening or extension CSP integration.
 
 ## Architecture and data
+
+### Broad offline coverage pilot
+
+`npm run import:lefff` rebuilds the pinned Lefff import without network access or
+dependency installation. `npm run check:lefff` verifies archive integrity,
+round-trip reconstruction of all 233,700 person/tense slots, explicit review
+decisions and byte-for-byte generated output. This runs in `npm run check`, so
+the existing GitHub Actions workflow covers it too.
+
+Read `docs/LEFFF_COVERAGE.md` for scope and promotion gates and
+`docs/LEFFF_SOURCE.md` for LGPLLR/source obligations. The generated resource supplies
+7,666 complete reference entries alongside 110 curated learning entries.
+`src/reference.js` admits only complete simple paradigms, decodes whole forms
+and inverts 95 templates for conjugated-form lookup without a large expanded
+index. `src/data/catalog.js` gives curated entries priority. Twenty-one reviewed
+alternate forms also extend payer/pouvoir search. The curated six-tense learning
+and explicit-example contracts remain intact. No API calls, extra
+permissions or build step were added to the installed extension.
+
+To smoke-test the change after reloading the actual extension: search `je paye`,
+`payerai`, and `je puis`. Each result should name its tense/person and identify
+an accepted variant. Select it: the matching tense opens, with the canonical
+form and a variation explanation. Check that `paye` offers both present and
+subjunctive first/third-person choices, saved verbs still synchronize, and a
+reference verb such as `abaisser` opens its source-labeled table without invented
+examples; its passé composé is explicitly unavailable. Check `j’acquiers` resolves
+to acquérir/present/first-person singular, broad prefixes expose Show more,
+reference bookmarks persist, and quarantined `clore` stays unsupported.
+
+### Existing runtime
 
 - `src/engine.js`: pure conjugation, formation explanations, normalized reverse lookup and explicit example retrieval.
 - `src/data/verbs.js`: 110 admitted verb entries, grammatical groups, productive patterns, explicit stems/forms/overrides, sense-specific auxiliaries and provenance.
@@ -23,7 +53,7 @@ Use Node.js 22+: `npm run check` runs data validation, app syntax and Node tests
 - `src/colors.js`, `src/page-theme.js`: fixed theme selection, optional automatic detection and active-tab refresh.
 - `src/speech.js`: strict French voice selection through native Chrome TTS, with Web Speech for previews.
 
-See [DATA_CONTRACTS.md](DATA_CONTRACTS.md) for field definitions, override priority, review scope and extension instructions for contributors.
+See [docs/DATA_CONTRACTS.md](DATA_CONTRACTS.md) for field definitions, override priority, review scope and extension instructions for contributors.
 
 ## Coverage
 
@@ -60,4 +90,39 @@ Additional checks for this update:
 
 Cormorant Garamond is used for the VerbeFlow wordmark; Instrument Serif is used for verb headings and French example text; Lora is used for the interface and conjugation table. The regular/italic Instrument Serif and variable regular/italic Lora fonts are bundled in `assets/fonts` for offline use, from the official Google Fonts repository. All three families are distributed under the SIL Open Font License 1.1; their full licenses are included as `CormorantGaramond-OFL.txt`, `InstrumentSerif-OFL.txt` and `Lora-OFL.txt`. No runtime Google Fonts connection is made.
 
-The generated book/V brand mark in `assets/brand` is shared by the UI, toolbar and extension manager. PNG exports are provided at 16, 32, 48 and 128 pixels alongside the full-resolution master; generation details are in `assets/brand/README.md`. Your personal Z logo remains in the creator footer.
+The generated book/V brand mark in `assets/brand` is shared by the UI, toolbar and extension manager. PNG exports are provided at 16, 32, 48 and 128 pixels alongside the full-resolution master; generation details are in `docs/BRANDING.md`. Your personal Z logo remains in the creator footer.
+
+Node checks cover the new reference catalog and search. The dated browser smoke
+checks above describe the earlier release; they do not establish cross-browser
+validation of the expanded reference collection.
+
+Actual loaded Chrome checks on 2026-11-04 verified toolbar opening, reverse
+lookup for `j’acquiers`, source attribution and correct present forms, explicit
+unavailable passé composé, reference bookmarking across an extension reload,
+and `je paye` ambiguity with selection of subjonctif while restoring the curated
+example and French Listen control. Broad prefix `a` showed 40 of 594 results;
+Show more increased this to 80 and focused the first newly added result. The
+temporary test bookmark was removed and the prior verb/tense restored.
+Other browsers and platforms have not been retested for this change.
+
+## Release packaging and publication
+
+`npm run package` creates `dist/VerbeFlow-0.2.0.zip` and `dist/SHA256SUMS`.
+The packager follows runtime module, HTML, CSS and asset dependencies rather
+than archiving the repository. It includes the main user README, licenses,
+font notices and a release-specific corresponding-source link. Tests, import
+scripts, audit data, metadata, full-resolution artwork and supporting docs stay
+out of the extension ZIP. Generated release files are ignored by Git.
+
+After committing, `python3 scripts/package-release.py --source` also creates a
+complete source ZIP from committed HEAD. Both assets must be distributed
+together, so the resource source, review inputs, notices and transformations
+remain available under the applicable licenses. The installer ZIP alone does
+not replace the corresponding-source distribution obligations.
+
+The tag workflow `.github/workflows/release.yml` checks the tag against the
+manifest version, runs all checks, builds both archives and publishes a GitHub
+release with SHA-256 checksums and `docs/RELEASE_NOTES.md`. Push a version tag
+only when the release is intended to be public. This workflow does not upload
+to the Chrome Web Store. Increment both manifest and package versions for the
+next release and update the user download filename and release notes.

@@ -1,12 +1,15 @@
 {
   "name": "verbeflow",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
+    "import:lefff": "node scripts/import-lefff.mjs",
+    "check:lefff": "node scripts/import-lefff.mjs --check",
     "preview": "python3 -m http.server 8765 --bind 127.0.0.1",
-    "check": "node scripts/validate.mjs && node --check src/app.js && node --check src/background.js && npm test"
+    "check": "node scripts/validate.mjs && npm run check:lefff && node --check src/app.js && node --check src/background.js && npm test && python3 -m unittest discover -s tests -p release_test.py",
+    "package": "python3 scripts/package-release.py"
   },
   "license": "AGPL-3.0-only"
 }

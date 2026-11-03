@@ -1,6 +1,11 @@
 import { VERBS, BY_ID } from './data/verbs.js';
 import { TENSES } from './data/tenses.js';
 import { EXAMPLES } from './data/examples.js';
+import { REVIEWED_VARIANTS, VARIANT_NOTES } from './data/lefff-variants.js';
+import { CATALOG, CATALOG_BY_ID } from './data/catalog.js';
+import { referenceForms, referenceLookup } from './reference.js';
+import { normalize } from './normalize.js';
+export { normalize } from './normalize.js';
 export const PRONOUNS = ['je', 'tu', 'il / elle / on', 'nous', 'vous', 'ils / elles'];
 const endings = {
   er: ['e','es','e','ons','ez','ent'], ir: ['is','is','it','issons','issez','issent'], re: ['s','s','','ons','ez','ent'],
@@ -15,8 +20,9 @@ const withReflexive = (i,form) => {
 };
 const part = (stem, ending = '') => ({stem, ending, text: stem + ending});
 export function conjugate(id, tense) {
-  const v = BY_ID[id];
-  if (!Object.hasOwn(BY_ID,id) || !Object.hasOwn(TENSES,tense)) throw new Error('Unsupported verb or tense');
+  const v = CATALOG_BY_ID[id];
+  if (!Object.hasOwn(CATALOG_BY_ID,id) || !Object.hasOwn(TENSES,tense)) throw new Error('Unsupported verb or tense');
+  if (v.coverage === 'reference') return referenceForms(id,tense);
   if (v.pattern === 'impersonal') return PRONOUNS.map((_,i) => i === 2 ? {...part(v.impersonalForms[tense]),available:true} : {...part('—'),available:false});
   if (v.pattern === 'reflexive') {
     if (tense === 'passe') {
@@ -53,7 +59,6 @@ export function subject(index, form) {
   return index === 0 && elides(form) ? 'j’' : PRONOUNS[index];
 }
 export function phrase(index, form) { const p = subject(index, form); return p + (p === 'j’' ? '' : ' ') + form; }
-export const normalize = s => s.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’']/g,"'").replace(/\s+/g,' ').replace(/\s*'\s*/g,"'");
 export const PERSONS = [
   {id:'1s', label:'first-person singular', person:1, number:'singular'},
   {id:'2s', label:'second-person singular', person:2, number:'singular'},
@@ -67,32 +72,41 @@ const add = (key, match) => {
   const n = normalize(key); if (!index.has(n)) index.set(n, new Map());
   index.get(n).set([match.infinitive,match.tense,match.personIndex,match.form].join('|'),match);
 };
+function indexForm(v, tense, i, form, variant = false) {
+  const match = {infinitive:v.infinitive,tense,mood:TENSES[tense].mood,personIndex:i,...PERSONS[i],form,...(variant ? {variant:true} : {})};
+  add(form,match); add(v.pattern === 'impersonal' ? 'il '+form : phrase(i,form),match);
+  // Natural individual pronouns as well as the compact table labels.
+  for (const pronoun of v.pattern === 'impersonal' ? [] : i === 2 ? ['il','elle','on'] : i === 5 ? ['ils','elles'] : []) add(pronoun+' '+form,match);
+}
 for (const v of VERBS) for (const tense of Object.keys(TENSES)) {
   conjugate(v.infinitive,tense).forEach((f,i) => {
     if (f.available === false) return;
     for (const e of ['', 'e']) for (const s of ['', 's']) {
       const form = f.text.replace(/\(e\)/g,e).replace(/\(s\)/g,s);
-      const match = {infinitive:v.infinitive,tense,mood:TENSES[tense].mood,personIndex:i,...PERSONS[i],form};
-      add(form,match); add(v.pattern === 'impersonal' ? 'il '+form : phrase(i,form),match);
-      // Natural individual pronouns as well as the compact table labels.
-      for (const pronoun of v.pattern === 'impersonal' ? [] : i === 2 ? ['il','elle','on'] : i === 5 ? ['ils','elles'] : []) add(pronoun+' '+form,match);
+      indexForm(v,tense,i,form);
     }
   });
 }
+// Reviewed variants extend curated forms; broad reference coverage is searched
+// separately through its explicit lexical template assignments.
+for (const variant of REVIEWED_VARIANTS) indexForm(BY_ID[variant.infinitive],variant.tense,variant.personIndex,variant.form,true);
 export function lookup(query) {
   const n = normalize(query); if (!n) return [];
   const matches = [...(index.get(n)?.values() ?? [])];
-  const prefixes = VERBS.filter(v => normalize(v.infinitive).startsWith(n)).map(v => ({infinitive:v.infinitive,tense:null}));
-  return [...prefixes,...matches];
+  const prefixes = CATALOG.filter(v => normalize(v.infinitive).startsWith(n)).map(v => ({infinitive:v.infinitive,tense:null,...(v.coverage ? {coverage:v.coverage} : {})}));
+  const referenceMatches = referenceLookup(query).map(m => ({...m,mood:TENSES[m.tense].mood,...PERSONS[m.personIndex]}));
+  return [...prefixes,...matches,...referenceMatches];
 }
 // Compatibility helper for callers that only need verb identities.
 export function search(query) { return [...new Set(lookup(query).map(m => m.infinitive))]; }
 export function example(id, tense) {
+  if (Object.hasOwn(CATALOG_BY_ID,id) && CATALOG_BY_ID[id].coverage === 'reference' && Object.hasOwn(TENSES,tense)) return null;
   if (!Object.hasOwn(EXAMPLES,id) || !Object.hasOwn(TENSES,tense)) throw new Error('Unsupported example');
   return EXAMPLES[id][tense];
 }
 export function formation(id, tense) {
-  const v = BY_ID[id], f = conjugate(id,tense)[0];
+  const v = CATALOG_BY_ID[id], f = conjugate(id,tense)[0];
+  if (v.coverage === 'reference') return tense === 'passe' ? 'This source does not identify the auxiliary for a supported sense. Passé composé is unavailable here; VerbeFlow will not guess avoir or être.' : 'These whole forms come from the Lefff reference lexicon. A stem-and-ending explanation, grammatical group and sense-specific auxiliary have not yet been reviewed for this entry. The source may omit other accepted spellings.';
   if (v.pattern === 'impersonal') return `Use impersonal il: ${v.impersonalForms[tense]}. ${v.notes}`;
   if (v.pattern === 'reflexive') return `Place me, te, se, nous, vous, se before the conjugated verb (m’, t’, s’ before a vowel or mute h). ${tense === 'passe' ? 'Use être in the present + the base verb’s past participle.' : formation(v.baseVerb,tense)} ${v.notes}`;
   let rule;
@@ -103,12 +117,12 @@ export function formation(id, tense) {
   else if (tense === 'subjunctive' && f.ending) rule = `Remove -ent from ${conjugate(id,'present')[5].text}; add -e, -es, -e, -ions, -iez, -ent. For nous and vous, remove -ons from ${conjugate(id,'present')[3].text} instead.`;
   else if (f.ending) rule = `Remove -${id.slice(-2)} from the infinitive; add the ${v.pattern} pattern endings: ${f.stem}- + -${f.ending}.`;
   else rule = 'These forms are explicitly stored. Compare the six persons; a single regular stem does not explain this whole paradigm.';
-  return rule + (v.notes ? ' '+v.notes : '');
+  return rule + (v.notes ? ' '+v.notes : '') + (VARIANT_NOTES[id] ? ' '+VARIANT_NOTES[id] : '');
 }
 
 // Preserve the chosen interpretation across the UI/storage boundary.
 export function selectionForMatch(match, currentTense = 'present') {
   const tense = match?.tense ?? currentTense;
-  if (!Object.hasOwn(BY_ID,match?.infinitive) || !Object.hasOwn(TENSES,tense)) throw new Error('Unsupported selection');
+  if (!Object.hasOwn(CATALOG_BY_ID,match?.infinitive) || !Object.hasOwn(TENSES,tense)) throw new Error('Unsupported selection');
   return {selected:match.infinitive,tense};
 }

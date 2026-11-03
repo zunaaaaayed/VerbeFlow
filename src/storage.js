@@ -1,4 +1,4 @@
-import { BY_ID } from './data/verbs.js';
+import { CATALOG_BY_ID as BY_ID } from './data/catalog.js';
 import { sanitizeTheme } from './colors.js';
 import { TENSES } from './data/tenses.js';
 export const MAX_BOOKMARKS = 10;

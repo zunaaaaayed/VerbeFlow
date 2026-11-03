@@ -38,7 +38,42 @@ Storage retains the starter’s four keys for compatibility and adds the validat
 
 Run `npm run check` before expanding coverage. Validation checks identity, duplicate verbs, declared person order, override tense IDs/shape, complete forms, source metadata, and bilingual coverage. Tests check independent high-risk forms and deliberately invalid data.
 
-The 110 per-entry reference pages were consulted on 2026-11-03 through Le Conjugueur (Figaro), with Larousse spelling rules and the Académie's sortir auxiliary guidance as additional checks. An automated normalized presence comparison checked generated forms against reference page text; this does not itself prove tense/person alignment or accent correctness. The 60 added entries were also compared with accents preserved, including dedicated pronominal tables. Targeted independent assertions cover these risks. Tables, rules, explanations and bilingual examples were authored in this repository; no third-party dataset, reference prose or reference-page archive is bundled. The references are copyrighted publications, not a licensed dataset for redistribution. Independent human linguistic review remains desirable.
+The 110 per-entry reference pages were consulted on 2026-11-03 through Le Conjugueur (Figaro), with Larousse spelling rules and the Académie's sortir auxiliary guidance as additional checks. An automated normalized presence comparison checked generated forms against reference page text; this does not itself prove tense/person alignment or accent correctness. The 60 added entries were also compared with accents preserved, including dedicated pronominal tables. Targeted independent assertions cover these risks. The original learning tables, rules, explanations and bilingual examples were authored in this repository; those reference pages and their prose are not bundled. Separately licensed Lefff data now supplies reference coverage and approved variants, as described below. The references are copyrighted publications, not a licensed dataset for redistribution. Independent human linguistic review remains desirable.
+
+## Licensed coverage pilot and approved variants
+
+`data/lefff/pilot.json` is the complete normalized development resource.
+`src/data/lefff-reference.js` is its generated runtime counterpart. The catalog
+admits only complete simple paradigms not already covered by curated entries.
+`scripts/import-lefff.mjs` verifies the pinned archive, filters malformed records,
+preserves missing slots as null, compresses five simple-tense paradigms, and
+round-trips every slot. `personOrder` is the existing six-person order;
+`tenseOrder` excludes passé composé because auxiliary/sense information is absent.
+Each entry explicitly references a compression template; this never assigns a
+grammatical group or licenses suffix-based prediction. Templates are not teaching
+decompositions and must not drive orange ending highlighting.
+
+The audit separates structural admission from linguistic review. Neither source
+coverage nor source agreement implies independent human approval. Source and
+derived resource licenses remain LGPLLR; see `docs/LEFFF_SOURCE.md`. The curated library and
+the imported reference library have separate coverage and review contracts.
+
+Only reviewed decisions in `data/lefff/review.json` generate runtime
+`src/data/lefff-variants.js`. Each variant declares infinitive, tense, personIndex,
+form and reference URLs. Lookup adds `variant: true`, preserving all ambiguous
+person/tense choices; selection opens the canonical table and its variation note.
+Canonical conjugations and complete bilingual-example validation are unchanged.
+Complete reference identities are supported by search, selection, bookmarks and
+storage. Partial or rejected source identities remain unsupported. Reference
+entries return unavailable six-slot rows for passé composé and null examples; the
+UI explicitly explains missing auxiliary review and hides the example/Listen
+section. They do not invent groups, meanings or pedagogical stem decompositions.
+`referenceLookup` reverses only explicitly assigned templates using per-family
+stem maps; no arbitrary infinitive can be admitted by a suffix match. H-initial
+reference forms show je / j’ pending elision review. Results are rendered in
+40-choice batches to keep broad prefix searches manageable.
+`npm run check:lefff` fails for source corruption, stale generated data, stale or
+duplicate decisions, and unresolved curated/source differences.
 
 ## Panel, color and speech boundaries
 

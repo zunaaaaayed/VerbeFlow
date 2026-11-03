@@ -9,7 +9,7 @@ French verbs have a lot of outfits. VerbeFlow helps you recognise them.
 
 Keep it beside your favourite webpage, look up a verb, and explore its conjugations, clear explanations, and French–English examples. The endings stand out in orange, so the little changes are easier to spot.
 
-You get **110 verbs**, **six tenses**, and **660 bilingual examples** to explore offline. Save up to **10 favourites**, listen to French pronunciation with an available French voice, and switch between a cosy light theme and a charcoal dark theme.
+You get **7,776 verbs offline**: **110 learning entries** with six tenses and **660 bilingual examples**, plus **7,666 reference entries** with five simple tenses. Save up to **10 favourites**, listen to French pronunciation with an available French voice, and switch between a cosy light theme and a charcoal dark theme.
 
 Enjoying your little French companion? [Give VerbeFlow a star on GitHub](https://github.com/zunaaaaayed/VerbeFlow) ⭐ It helps other learners find it!
 
@@ -36,18 +36,22 @@ The steps below use Chrome’s button names. Other browsers may word things slig
 
 ### 1. Download VerbeFlow
 
-1. Open the [VerbeFlow download page](https://github.com/zunaaaaayed/VerbeFlow).
-2. Click the green **Code** button near the top of the page.
-3. Click **Download ZIP**. Your computer will download a file called **VerbeFlow-main.zip**.
+1. Open the [latest VerbeFlow release](https://github.com/zunaaaaayed/VerbeFlow/releases/latest).
+2. Scroll to **Assets** at the bottom of the release notes. Click **Assets** if the list is folded shut.
+3. Click **VerbeFlow-0.2.0.zip**. This is the ready-to-install download.
 4. Open your computer’s **Downloads** folder.
+
+Choose the ZIP named **VerbeFlow**, followed by its version number. The files named **source** or **Source code** are the bigger project downloads for people who want to explore or change the code. You don’t need those to install the extension.
 
 ### 2. Unpack it and give it a home
 
-1. Find **VerbeFlow-main.zip** in **Downloads**.
-2. On a **Mac**, double-click it. On **Windows**, right-click it, choose **Extract All**, then click **Extract**. On **Linux**, right-click it in your file manager and choose **Extract Here**, **Extract To**, or **Extract**, depending on your desktop.
-3. Move the unpacked **VerbeFlow-main** folder somewhere you’ll keep it, such as **Documents** or your **Home** folder.
-4. Open that folder. You should see **README.md**, **manifest.json**, and an **assets** folder. If you see another **VerbeFlow-main** folder instead, open that inner folder.
-5. Keep this folder in its new home after installation. Your browser will continue using the files inside it.
+1. Find **VerbeFlow-0.2.0.zip** in **Downloads**.
+2. On a **Mac**, double-click it. A folder named **VerbeFlow-0.2.0** should appear beside it.
+3. On **Windows**, right-click the ZIP, choose **Extract All**, keep the suggested new folder, then click **Extract**.
+4. On **Linux**, right-click the ZIP, choose **Extract To** or **Extract**, and create a new folder named **VerbeFlow** as the destination. Avoid extracting loose files into Downloads.
+5. Move the unpacked folder somewhere you’ll keep it, such as **Documents** or your **Home** folder. You can rename it **VerbeFlow** to keep things tidy.
+6. Open that folder. You should see **README.md**, **manifest.json**, and an **assets** folder. If you see another folder instead, open it until you find **manifest.json**.
+7. Keep this folder in its new home after installation. Your browser will continue using the files inside it.
 
 ### 3. Add it to your browser
 
@@ -55,7 +59,7 @@ The steps below use Chrome’s button names. Other browsers may word things slig
 2. Click the address bar, enter your browser’s **Extensions page** from the list above, and press **Enter**.
 3. Turn on **Developer mode** in the top-right corner. That’s just Chrome’s name for this setting; you won’t need to write any code.
 4. Click **Load unpacked**, which appears near the top-left corner.
-5. Choose the unpacked **VerbeFlow-main** folder from step 2. Choose the folder that contains **manifest.json**, rather than the ZIP file or the assets folder.
+5. Choose the unpacked **VerbeFlow** folder from step 2. Choose the folder that contains **manifest.json**, rather than the ZIP file or the assets folder.
 6. Click **Select Folder**, **Select**, or **Open**, depending on your computer.
 7. Look for a **VerbeFlow** card in the Extensions page. Keep its on/off switch turned on.
 
@@ -147,7 +151,7 @@ If `git --version` already works, skip the Git installation step for your system
 1. Open your browser’s **Extensions page**, using the address listed above.
 2. Turn on **Developer mode**.
 3. Click **Load unpacked**.
-4. Select the **VerbeFlow** folder printed by your terminal. It lives in your home folder and contains **manifest.json**. It has no **-main** suffix when downloaded with Git.
+4. Select the **VerbeFlow** folder printed by your terminal. It lives in your home folder and contains **manifest.json**. Use this Git folder, rather than a folder from a separate ZIP download.
 5. Pin the extension and click its logo to open the side panel.
 
 That’s the whole setup: no extra build or package installation is needed for VerbeFlow itself. Git installation options come from the [official Git guide](https://git-scm.com/install/).
@@ -170,7 +174,9 @@ Then open your browser’s Extensions page and click VerbeFlow’s **reload arro
 4. Open **Explore a tense** and choose a tense.
 5. Read the six forms, then scroll down for the explanation and a bilingual example.
 
-The six tenses are présent, passé composé, imparfait, futur simple, conditionnel présent, and subjonctif présent. The collection includes regular verbs, irregular verbs, common reflexive verbs, and **falloir** and **pleuvoir**. It is a useful learning collection, rather than every verb in the French language.
+The six tenses are présent, passé composé, imparfait, futur simple, conditionnel présent, and subjonctif présent. The learning collection includes regular verbs, irregular verbs, common reflexive verbs, and **falloir** and **pleuvoir**.
+
+Results marked **reference** open a larger dictionary of conjugation tables. These entries have five simple tenses, with their source and review status shown. Their English meanings, teaching explanations and bilingual examples are still waiting for review. Choose passé composé and you’ll see why it is unavailable: we haven’t checked which auxiliary fits the verb’s meaning, so VerbeFlow won’t guess. The reference collection may omit valid alternative spellings and is not a promise to cover every French verb. For an h-initial reference form, **je / j’** means you should check whether that verb allows elision.
 
 ### Keep your favourites
 
@@ -226,9 +232,11 @@ Keeping the same folder helps keep the same extension and its saved choices. Rem
 
 ## Where the words and artwork come from
 
-The verb forms and explanations were written for VerbeFlow and checked against [Le Conjugueur](https://leconjugueur.lefigaro.fr/), with additional checks using [Larousse](https://www.larousse.fr/conjugaison/) and the [Dictionnaire de l’Académie française](https://www.dictionnaire-academie.fr/). The recorded reference-check date is **3 November 2026**.
+The 110 learning entries’ verb forms and explanations were written for VerbeFlow and checked against [Le Conjugueur](https://leconjugueur.lefigaro.fr/), with additional checks using [Larousse](https://www.larousse.fr/conjugaison/) and the [Dictionnaire de l’Académie française](https://www.dictionnaire-academie.fr/). Their recorded reference-check date is **3 November 2026**.
 
 The French–English examples were written for this project and reviewed with help from Codex. A separate human language review is still pending. VerbeFlow is a learning companion; a trusted dictionary or teacher remains useful for tricky meanings and agreement.
+
+Search also recognises checked alternatives such as **je paye** and **je puis**. These variants come from the openly licensed **Lefff** language resource, packaged by **Ludan Stoecklé / RosaeNLG**, and were checked against the linked dictionary references. The main tables keep their usual spellings and explain the alternatives. The larger reference collection also comes from Lefff. It has been checked for complete tables and imported without changing its spellings; it has not had an independent human language review. Reference entries are clearly marked so you can tell them apart from the fuller learning entries.
 
 The book-shaped V logo was created with OpenAI’s image-generation tool. The typefaces are **Cormorant Garamond**, **Instrument Serif**, and **Lora**, supplied through [Google Fonts](https://fonts.google.com/). Their original license and credit notices are included with the project. The Z in the footer is the creator’s own supplied logo.
 
@@ -240,6 +248,8 @@ When automatic page detection is active, VerbeFlow briefly processes a small scr
 
 French speech is provided by the voices available on your computer or in Chrome. A voice provider’s own connectivity and privacy behaviour may vary.
 
+You can read the [full privacy policy](https://github.com/zunaaaaayed/VerbeFlow/blob/main/docs/PRIVACY.md) for more detail.
+
 ## Legal
 
 Copyright © 2026 Md Zunayedul Islam.
@@ -249,6 +259,8 @@ VerbeFlow’s original source code and documentation are licensed under the **GN
 The license permits use, modification, and redistribution, including commercial use, subject to its terms. Distribution of covered works requires compliance with its corresponding-source and license obligations. If a modified version supports remote interaction over a computer network, section 13 requires an appropriate offer of its Corresponding Source to those users. This summary does not replace the license text.
 
 The bundled fonts remain under the **SIL Open Font License 1.1**, with their own copyright and reserved-name notices: [Cormorant Garamond](assets/fonts/CormorantGaramond-OFL.txt), [Instrument Serif](assets/fonts/InstrumentSerif-OFL.txt), and [Lora](assets/fonts/Lora-OFL.txt). They are not relicensed under the project’s AGPL license.
+
+The bundled Lefff linguistic resource and derived variant data retain the **Lesser General Public License for Linguistic Resources (LGPLLR)**. Their [full license](vendor/lefff/LICENSE-LGPLLR.txt), [attribution and modification notice](docs/LEFFF_SOURCE.md), and original source archive accompany this repository. They are not relicensed under AGPL.
 
 References to dictionaries, Chrome, Google Fonts, and other third parties do not imply affiliation, sponsorship, or endorsement. Third-party material and marks remain subject to their applicable rights. No trademark or endorsement rights are granted by this project’s license notice.
 

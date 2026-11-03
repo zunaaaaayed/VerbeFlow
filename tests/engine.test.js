@@ -39,12 +39,12 @@ test('compound tenses use the correct auxiliary and agreement', () => {
 });
 test('reverse lookup handles accents, apostrophes, agreement, and ambiguity', () => {
   assert.deepEqual(search(' AVONS '),['avoir']);
-  assert.deepEqual(search('etre'),['être']);
+  assert.equal(search('etre')[0],'être'); // exact curated identity precedes broader prefixes
   assert.deepEqual(search("j'ai parlé"),['parler']);
   assert.deepEqual(search('j’ai parlé'),['parler']);
   assert.deepEqual(search('sommes venues'),['venir']);
   assert.deepEqual(search('suis'),['être','suivre']);
-  assert.deepEqual(search('parl'),['parler']);
+  assert.ok(search('parl').includes('parler'));
   assert.ok(search('aime').includes('aimer'));
   assert.deepEqual(search('unsupported'),[]);
   assert.deepEqual(search('<script>'),[]);
