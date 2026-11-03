@@ -1,0 +1,24 @@
+VerbeFlow
+Copyright (C) 2026 VerbeFlow contributors.
+
+Original project source code and documentation are licensed under the GNU
+Affero General Public License, version 3 only (AGPL-3.0-only). The complete
+license is provided in LICENSE. Any copyright interests held by the
+contributors in the original project artwork are offered under the same
+license. This statement does not assert copyright protection over material
+that is not eligible for such protection.
+
+Bundled fonts retain their separate SIL Open Font License, version 1.1:
+- Cormorant Garamond: assets/fonts/CormorantGaramond-OFL.txt
+- Instrument Serif: assets/fonts/InstrumentSerif-OFL.txt
+- Lora: assets/fonts/Lora-OFL.txt
+The respective copyright notices and complete font licenses accompany the
+font files. The project license does not relicense these font files.
+
+Conjugation references are credited in README.md and in the verb records.
+Their names, websites, and third-party content are not relicensed by this
+project. Reference links do not imply affiliation or endorsement.
+
+No trademark rights or endorsement rights are granted by this notice.
+Commercial use is permitted subject to the applicable license terms.
+VerbeFlow is supplied without warranty; see LICENSE, sections 15 and 16.

@@ -7,5 +7,6 @@
     "test": "node --test tests/*.test.js",
     "preview": "python3 -m http.server 8765 --bind 127.0.0.1",
     "check": "node scripts/validate.mjs && node --check src/app.js && node --check src/background.js && npm test"
-  }
+  },
+  "license": "AGPL-3.0-only"
 }

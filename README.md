@@ -1,93 +1,144 @@
-# VerbeFlow
+<p align="center">
+  <img src="assets/brand/verbeflow-128.png" alt="VerbeFlow logo: a book-shaped V with an orange flowing stroke" width="112" height="112">
+</p>
 
-A lightweight offline Chrome Manifest V3 side-panel extension for French conjugation. Clicking the toolbar icon opens the panel directly; there is no popup. Conjugations use 22 px type with 16 px pronouns. No build step, accounts, analytics or remote code.
+<h1 align="center">VerbeFlow</h1>
+<p align="center"><strong>A little French, every day.</strong></p>
 
-## Install or reload
+French verbs have a lot of outfits. VerbeFlow helps you recognise them.
 
-Requires Chrome 116 or later.
+Keep it beside your favourite webpage, look up a verb, and explore its conjugations, clear explanations, and French–English examples. The endings stand out in orange, so the little changes are easier to spot.
 
-1. Open `chrome://extensions` and enable **Developer mode**.
-2. Choose **Load unpacked** and select this repository root (the directory containing `manifest.json`).
-3. If VerbeFlow was loaded from the starter's other directory, remove that old entry first to avoid two separate extensions and stores. Loading this repository creates a separate store; existing starter bookmarks are not automatically transferred across extension IDs.
-4. After subsequent edits, close its side panel, click **Reload** on the VerbeFlow card, then reopen via the toolbar icon.
-5. Click the VerbeFlow toolbar icon. The service worker calls `sidePanel.open()` directly from the click handler, before any asynchronous color work.
+You get **110 verbs**, **six tenses**, and **660 bilingual examples** to explore offline. Save up to **10 favourites**, listen to French pronunciation with an installed French voice, and switch between a cosy light theme and a charcoal dark theme.
 
-## Development
+## Install it, one click at a time
 
-Use Node.js 22+: `npm run check` runs data validation, app syntax and Node tests. `npm test` runs tests alone. No npm install is needed. GitHub Actions runs the checks on pushes and pull requests.
+You’ll need **Google Chrome on a computer**. These steps are for the downloadable version, which you add to Chrome yourself.
 
-`npm run preview` serves `http://127.0.0.1:8765/sidepanel.html`. A web preview uses localStorage, not Chrome APIs; it cannot verify extension storage, panel opening or extension CSP integration.
+### 1. Download VerbeFlow
 
-## Appearance and saved verbs
+1. Open the [VerbeFlow download page](https://github.com/zunaaaaayed/VerbeFlow).
+2. Click the green **Code** button near the top of the page.
+3. Click **Download ZIP**. Your computer will download a file called **VerbeFlow-main.zip**.
+4. Open your computer’s **Downloads** folder.
 
-Both themes use the supplied five-color palette: **#244855** (deep blue), **#E64833** (orange), **#874F41** (brown), **#90AEAD** (teal), and **#FBE9D0** (cream). Light mode has a cream background with blue/brown text; dark mode has a deep-blue background with cream text. Surface tints and muted text shades preserve readable contrast. Conjugation endings use **#E64833**, at a bold 22 px size; other orange accents are decorative. The footer logo is black in light mode and white in dark mode.
+### 2. Unpack it and give it a home
 
-Use the sun/moon switch in the header to choose light or dark mode. This manual choice is saved across tabs and browser restarts. **Auto** appears beside the switch when a manual override is active; click it to follow the active page again. In Auto, the extension only classifies the page as light or dark—it never copies webpage colors into the interface. If detection is unavailable, Auto follows the browser/system color preference. Manual mode does not capture or sample webpages.
+1. On a **Mac**, double-click **VerbeFlow-main.zip**. A folder called **VerbeFlow-main** should appear.
+2. On **Windows**, right-click **VerbeFlow-main.zip**, choose **Extract All**, then click **Extract**.
+3. Move the unpacked **VerbeFlow-main** folder somewhere you’ll keep it, such as **Documents**.
+4. Open that folder. You should see **README.md**, **manifest.json**, and an **assets** folder. If you see another **VerbeFlow-main** folder instead, open that inner folder.
+5. Keep this folder in its new home after installation. Chrome will continue using the files inside it.
 
-Clicking the toolbar grants temporary `activeTab` access to that page. To follow light/dark appearance automatically across tab switches and sites, click **Enable automatic page detection** in the footer and accept Chrome’s optional website-access prompt. This requests `<all_urls>` only at that explicit click; it is not a required install-time host permission. You can revoke it through Chrome’s extension site-access controls. In Auto, small screenshot samples are processed locally about every 3.5 seconds and on tab/navigation changes. Only a light/dark classification leaves the worker; screenshots are not saved, logged or transmitted. Image-heavy or evenly mixed pages may be classified imperfectly; the manual switch always takes priority.
+### 3. Add it to Chrome
 
-Required permissions: `storage` for saved state, `sidePanel` for the interface, `activeTab` for light/dark classification on a toolbar click, and `tts` for native French speech. No scripting/content-script permission is needed.
+1. Open **Google Chrome**.
+2. Click the address bar at the top, type **chrome://extensions**, and press **Enter**.
+3. Turn on **Developer mode** in the top-right corner. That’s just Chrome’s name for this setting; you won’t need to write any code.
+4. Click **Load unpacked**, which appears near the top-left corner.
+5. Choose the unpacked **VerbeFlow-main** folder from step 2. Choose the folder that contains **manifest.json**, rather than the ZIP file or the assets folder.
+6. Click **Select Folder**, **Select**, or **Open**, depending on your computer.
+7. Look for a **VerbeFlow** card in Chrome. Keep its on/off switch turned on.
 
-Search is the entry point to the full offline library. **Saved verbs** appears beneath it when nonempty; Recent and All verbs tabs have been removed. Save up to **10 distinct verbs** with the star. At the limit, unsave a verb before adding another; existing saves can always be removed. Older lists display their first 10 valid, distinct entries, and every subsequent bookmark write enforces the same limit. Legacy recent data is tolerated but no longer tracked or shown.
+### 4. Put it within easy reach
 
-## Architecture and data
+1. Click Chrome’s **puzzle-piece icon** near the top-right corner.
+2. Find **VerbeFlow** in the list.
+3. Click the **pin** beside it. The VerbeFlow logo should now stay beside the address bar.
+4. Click that logo. VerbeFlow opens in a **side panel**, beside your webpage. Bonjour, verbs!
 
-- `src/engine.js`: pure conjugation, formation explanations, normalized reverse lookup and explicit example retrieval.
-- `src/data/verbs.js`: 110 admitted verb entries, grammatical groups, productive patterns, explicit stems/forms/overrides, sense-specific auxiliaries and provenance.
-- `src/data/core-verbs.js`: additional student vocabulary, explicit reflexive base relationships and impersonal paradigms.
-- `src/data/verb-record.js`: shared constructors for admitted regular and irregular records.
-- `src/data/tenses.js`: six tenses and their mood, usage and formation metadata.
-- `src/data/examples.js`: 660 explicit bilingual examples, one per verb/tense, and editorial review metadata.
-- `src/validate.js`: dataset completeness and contract validation.
-- `src/storage.js`: sanitization, key-level persistence and cross-surface subscriptions.
-- `src/app.js`, `src/styles.css`: accessible side-panel interface and large conjugation rows.
-- `src/background.js`: direct toolbar opening and local light/dark screenshot classification.
-- `src/colors.js`, `src/page-theme.js`: fixed theme selection, optional automatic detection and active-tab refresh.
-- `src/speech.js`: strict French voice selection through native Chrome TTS, with Web Speech for previews.
+## Make yourself at home
 
-See [DATA_CONTRACTS.md](DATA_CONTRACTS.md) for field definitions, override priority, review scope and extension instructions for contributors.
+### Find a verb
 
-## Coverage
+1. Click the search box.
+2. Type an infinitive, such as **parler**, or a form you’ve spotted, such as **j’avais**.
+3. Click the result you want. If several meanings, people, or tenses fit, choose the one you need.
+4. Open **Explore a tense** and choose a tense.
+5. Read the six forms, then scroll down for the explanation and a bilingual example.
 
-Présent de l’indicatif, passé composé, imparfait, futur simple, conditionnel présent and subjonctif présent; six person slots each (unused impersonal persons are explicit dashes). Search accesses every entry without a network connection. The library covers 100 ordinary verbs across all three grammatical groups, spelling changes and major irregular families, eight common reflexive verbs, and two impersonal verbs. It is a curated core library, not a complete dictionary of French verbs.
+The six tenses are présent, passé composé, imparfait, futur simple, conditionnel présent, and subjonctif présent. The collection includes regular verbs, irregular verbs, common reflexive verbs, and **falloir** and **pleuvoir**. It is a useful learning collection, rather than every verb in the French language.
 
-The original 50 verbs are supplemented by everyday vocabulary such as étudier, penser, passer, marcher, aider, utiliser, raconter, montrer, apporter, habiter, visiter, voyager, déjeuner, dîner, préparer, fermer, garder, quitter, croire, vivre, suivre, rire, ouvrir, offrir, apprendre, comprendre, conduire, traduire, envoyer, payer, préférer, espérer, lever, promener, mourir, naître, devenir, revenir, obtenir, sentir, servir, courir, valoir, permettre and battre, plus the base verbs for daily routines.
+### Keep your favourites
 
-Reflexive entries: se lever, s’habiller, se laver, se coucher, se réveiller, se promener, s’appeler and se préparer. Impersonal entries: falloir and pleuvoir (weather sense).
+1. Open a verb you’d like to practise again.
+2. Click its **star**. It appears under **Saved verbs**.
+3. Click a saved verb whenever you want to revisit it.
+4. To remove one, open it and click its star again.
 
-Search infinitives, prefixes or forms: `j’avais`, `ECRIS`, `elles sont sorties`. Results retain tense, mood, person, number and the actual matched form. Several interpretations remain separate; selecting one opens that verb and tense. Unsupported verbs never receive guessed forms.
+There’s room for **10 saved verbs**. When your shelf is full, remove one to make room for another.
 
-## Provenance and limitations
+### Choose your lighting
 
-Forms were authored and cross-checked on 2026-11-03 against per-verb [Le Conjugueur](https://leconjugueur.lefigaro.fr/) references, supplemented by [Larousse's acheter rule](https://www.larousse.fr/fr/conjugaison/francais/acheter/125) and [Académie guidance for sortir](https://www.dictionnaire-academie.fr/conjuguer/A9S2177). Source links and review status accompany every verb. No third-party dataset or copyrighted explanatory prose is bundled. Original bilingual examples were editorially reviewed by Codex; independent human linguistic review is still pending.
+1. Click the **sun or moon** at the top of VerbeFlow to switch between light and dark mode.
+2. Your choice stays selected when you change pages or reopen Chrome.
+3. Click **Auto**, beside the switch, to let VerbeFlow follow whether the current page is light or dark.
+4. For this to work automatically across different websites, click **Enable automatic page detection** at the bottom of the panel and review Chrome’s permission request.
+5. You can decline that request and keep using the manual switch. Where page detection is unavailable, Auto follows your browser’s light or dark preference.
 
-Only the bundled entries and six tenses are supported. No passive, imperative, literary tenses or arbitrary object-pronoun parsing. Reflexive entries support the documented sense with subject agreement; constructions with a following direct object, such as elle s’est lavé les mains, need different agreement and are outside these tables. Pleuvoir covers weather, not figurative plurals. Entrer and sortir use the intransitive sense with être; their transitive avoir usage is explained but not conjugated. Passer represents transitive “spend time” with avoir. Traditional connaître spelling and the documented payer/préférer/espérer variants are used. Accent-insensitive lookup intentionally preserves additional matches.
+Both modes use VerbeFlow’s own colours. Your webpage only helps choose which mode to show.
 
-Tables show optional feminine/plural agreement; examples use a masculine singular speaker. Avoir tables assume no preceding direct object. The on row is compact and assumes singular agreement. French pronunciation explicitly selects a French-language voice and matching language through Chrome’s native TTS API, preferring local voices. If none is available, Listen is disabled instead of using English. Hover Listen to see the chosen voice and language. Install a French voice in your operating system speech settings if necessary. Page previews use Web Speech with the same strict language filtering. Offline availability depends on the installed voice; no external speech service is configured.
+### Hear a little French
 
-State is shared through chrome.storage.local. Invalid/older data falls back to valid defaults. Read/write failures are reported. Concurrent changes to the same list are last-write-wins; writes to different keys are preserved.
+1. Open a verb and scroll down to **In a sentence**.
+2. Click **Listen** to hear the French example.
+3. If you see **French voice unavailable**, add a French voice in your computer’s speech settings, then close and reopen the panel.
+4. On a **Mac**, open **System Settings**, go to **Accessibility**, and look for **Read & Speak**, **Spoken Content**, or the speech/voice settings. Use the voice list to add a French voice. The wording varies with your macOS version. [Apple’s voice guide](https://support.apple.com/guide/mac-help/change-the-voice-your-mac-uses-to-speak-text-mchlp2290/mac) can help you find it.
+5. On **Windows**, open **Settings**, go to **Time & language**, then **Speech**. Look for **Manage voices** or **Add voices**, and add French. If Windows asks you to download a speech pack, let it finish. [Microsoft’s voice guide](https://support.microsoft.com/en-us/accessibility/windows/narrator/appendix-a-supported-languages-and-voices) has more help.
 
-## Verification and Chrome smoke test
+VerbeFlow uses an available French voice. Pronunciation and offline playback depend on the voice installed on your computer.
 
-Automated checks cover all 3,900 available person/tense forms and 60 explicit impersonal gaps structurally, all 660 examples, spelling and irregular families, auxiliary agreement, normalized and ambiguous lookups, validation failures, malformed/older state, storage failures and synchronization notifications. The actual loaded Chrome extension was checked for direct toolbar-to-panel opening, removal of the extra copy, larger conjugation rows, both fixed palettes and the live header toggle, including a manual light override while a dark webpage remains active. The native Listen action selected Eddy (French (France)), `fr-FR`, with no playback error; the automation cannot verify the audible accent. New automated checks cover the fixed palettes’ text contrast, light/dark page classification, saved manual overrides, suspension of sampling in manual mode, Auto restoration, French-only voice selection, native TTS language binding, and service-worker capture failure/race handling. Storage and Chrome API tests use mocks. Full all-site permission behavior and the 10-save interaction checklist remain manual checks.
+## Updates and little hiccups
 
-After reloading:
+### Install an update
 
-1. Search `j’avais`: choose **avoir → Imparfait → first-person singular**; confirm `avais` appears.
-2. Search `parle`: confirm distinct present/subjunctive and person choices. Use Tab and Enter to select a subjunctive result; confirm the tense changes and heading receives focus.
-3. Check manger imparfait (`mangeais`, `mangions`), commencer (`commençais`, `commencions`), acheter future (`achèterai`) and connaître present (`connaît`).
-4. Check sortir passé composé: `je suis sorti(e)`, auxiliary explanation and agreement legend. Listen: the example must contain no spoken parentheses.
-5. Save a verb, close/reopen the side panel through the toolbar, and confirm the selection, tense and saved list persist. Check again after restarting Chrome.
-6. Resize the panel to about 320 px, zoom to 125%, navigate by keyboard, and inspect focus/labels. Try blank search and an unsupported verb.
-7. Confirm **Errors** on `chrome://extensions` is empty. If no French voice is installed, confirm the visible unavailable label and disabled Listen button.
+1. Download and unpack a fresh copy using the steps above.
+2. Close the VerbeFlow side panel.
+3. Copy the contents of the new unpacked folder into the **same VerbeFlow folder you originally installed**. If your computer asks, replace the old files.
+4. Open **chrome://extensions** in Chrome.
+5. Find the VerbeFlow card and click its **circular reload arrow**.
+6. Click the VerbeFlow toolbar logo to reopen it.
 
-Additional checks for this update:
+Keeping the same folder helps keep the same extension and its saved choices. Removing the extension from Chrome can remove those saved choices too.
 
-- In Auto, visit a dark page and click the toolbar: verify the fixed charcoal theme and white Z logo. Visit a light page and click again: verify the cream theme and black logo. Enable **automatic page detection** for cross-tab following. Toggle manually, switch tabs, and restart Chrome: the manual theme must stay selected. Click **Auto** to resume detection. Deny/revoke permission and verify the browser-preference fallback. Click Z to open the creator’s website in a separate tab.
-- `npm run preview` also serves `/tests/fixtures/colors-light.html` and `/tests/fixtures/colors-dark.html` as controlled color pages. Test these with the loaded extension, not a preview of its interface.
-- Save 10 different verbs, attempt an eleventh, and confirm the count stays at 10 with a helpful message. Unsave one, then save another.
-- Search `s’habiller`, `elles se sont lavées`, `il faut`, and `il pleuvra`. Confirm correct elision/agreement and dashes for unused impersonal persons.
+### Can’t find it?
 
-## Typography
+- **No toolbar logo?** Click the puzzle-piece icon and pin VerbeFlow.
+- **Chrome says a file is missing?** Unpack the ZIP first, then choose the folder containing **manifest.json**.
+- **The panel won’t open?** Visit a regular webpage, check that VerbeFlow is turned on at **chrome://extensions**, then click its toolbar logo again.
+- **Two VerbeFlow entries?** Keep the copy you want to use. Each copy may have its own saved verbs; removing a copy can delete its saved choices.
+- **A verb is missing?** Try a shorter search, such as **parl**, or a common infinitive. VerbeFlow won’t make up forms for a verb outside its collection.
 
-Instrument Serif is used for the brand, verb headings and French example text; Lora is used for the interface and conjugation table. The regular/italic Instrument Serif and variable regular/italic Lora fonts are bundled in `assets/fonts` for offline use, from the official Google Fonts repository. Both families are distributed under the SIL Open Font License 1.1; their full licenses are included as `InstrumentSerif-OFL.txt` and `Lora-OFL.txt`. No runtime Google Fonts connection is made.
+## Where the words and artwork come from
+
+The verb forms and explanations were written for VerbeFlow and checked against [Le Conjugueur](https://leconjugueur.lefigaro.fr/), with additional checks using [Larousse](https://www.larousse.fr/conjugaison/) and the [Dictionnaire de l’Académie française](https://www.dictionnaire-academie.fr/). The recorded reference-check date is **3 November 2026**.
+
+The French–English examples were written for this project and reviewed with help from Codex. A separate human language review is still pending. VerbeFlow is a learning companion; a trusted dictionary or teacher remains useful for tricky meanings and agreement.
+
+The book-shaped V logo was created with OpenAI’s image-generation tool. The typefaces are **Cormorant Garamond**, **Instrument Serif**, and **Lora**, supplied through [Google Fonts](https://fonts.google.com/). Their original license and credit notices are included with the project. The Z in the footer is the creator’s own supplied logo.
+
+## Privacy
+
+Your selected verb, tense, theme, and saved verbs stay in Chrome on your computer. VerbeFlow has no account system or analytics service.
+
+When automatic page detection is active, VerbeFlow briefly processes a small screenshot of the visible page on your computer to decide whether it is light or dark. Those screenshots are not saved or sent anywhere. Manual light/dark mode does not sample the page. Chrome asks for additional website access before automatic detection can follow you across sites. You can review or revoke that access through Chrome’s extension settings.
+
+French speech is provided by the voices available on your computer or in Chrome. A voice provider’s own connectivity and privacy behaviour may vary.
+
+## Legal
+
+Copyright © 2026 Md Zunayedul Islam.
+
+VerbeFlow’s original source code and documentation are licensed under the **GNU Affero General Public License, version 3 only (AGPL-3.0-only)**. Any copyright interests held by the contributors in the original project artwork are offered under the same license. The complete terms are in [LICENSE](LICENSE); attribution and third-party notices are in [NOTICE](NOTICE).
+
+The license permits use, modification, and redistribution, including commercial use, subject to its terms. Distribution of covered works requires compliance with its corresponding-source and license obligations. If a modified version supports remote interaction over a computer network, section 13 requires an appropriate offer of its Corresponding Source to those users. This summary does not replace the license text.
+
+The bundled fonts remain under the **SIL Open Font License 1.1**, with their own copyright and reserved-name notices: [Cormorant Garamond](assets/fonts/CormorantGaramond-OFL.txt), [Instrument Serif](assets/fonts/InstrumentSerif-OFL.txt), and [Lora](assets/fonts/Lora-OFL.txt). They are not relicensed under the project’s AGPL license.
+
+References to dictionaries, Chrome, Google Fonts, and other third parties do not imply affiliation, sponsorship, or endorsement. Third-party material and marks remain subject to their applicable rights. No trademark or endorsement rights are granted by this project’s license notice.
+
+VerbeFlow is provided **without warranty**, including without any warranty of linguistic accuracy, merchantability, or fitness for a particular purpose, to the extent permitted by applicable law. The limitations of liability in the license apply to the extent permitted by applicable law. See sections 15 and 16 of [LICENSE](LICENSE).
+
+---
+
+<p align="center">Built with ♡ by <a href="https://zunaaaaayed.github.io">Zunayed</a></p>
