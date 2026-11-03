@@ -41,7 +41,7 @@ test('lookup preserves ambiguity and returns selectable tense/person metadata', 
  assert.ok(lookup('connaî').some(m=>m.tense===null));
 });
 test('dataset validation rejects editor mistakes', () => {
- assert.equal(VERBS.length,50); assert.deepEqual(validateData(),[]);
+ assert.equal(VERBS.length,110); assert.deepEqual(validateData(),[]);
  const v=structuredClone(VERBS[0]);
  v.personOrder.reverse();v.overrides.wrong=[''];v.present=[''];
  const errors=validateData([v,v],{parler:{present:{french:'Bonjour.'}}});

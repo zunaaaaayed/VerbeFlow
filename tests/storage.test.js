@@ -5,8 +5,12 @@ test('extension storage patches keys, reports failures, and receives panel chang
  globalThis.chrome={storage:{local:{get:async()=>{if(fail)throw Error('unavailable');return data;},set:async patch=>{if(fail)throw Error('quota');Object.assign(data,patch);}},onChanged:{addListener:fn=>{listener=fn;}}}};
  try {
   const {readState,saveState,subscribe}=await import('../src/storage.js?extension-test');
+  await saveState({theme:'dark'});assert.equal((await readState()).theme,'dark');
+  await saveState({theme:'invalid'});assert.equal((await readState()).theme,'auto');
   await saveState({tense:'future'});assert.equal((await readState()).selected,'parler');assert.deepEqual(data.bookmarks,['être']);
   let updates=0;subscribe(()=>updates++);listener({},'sync');listener({},'local');assert.equal(updates,1);
+  const { VERBS } = await import('../src/data/verbs.js');
+  await saveState({bookmarks:VERBS.slice(0,14).map(v=>v.infinitive)});assert.equal(data.bookmarks.length,10);
   fail=true;await assert.rejects(readState);await assert.rejects(()=>saveState({selected:'avoir'}));
  } finally {delete globalThis.chrome;}
 });

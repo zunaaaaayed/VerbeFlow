@@ -1,12 +1,7 @@
 // Only explicitly listed verbs are supported. Never infer regularity from a suffix.
 // Forms are ordered je, tu, il/elle/on, nous, vous, ils/elles.
-const regular = (infinitive, meaning, pattern, complement, translation) => ({
-  infinitive, meaning, pattern, auxiliary: 'avoir', complement, translation,
-});
-const irregular = (infinitive, meaning, present, futureStem, participle, subjunctive, complement, translation, auxiliary = 'avoir') => ({
-  infinitive, meaning, pattern: 'irregular', auxiliary, present: present.split('|'),
-  futureStem, participle, subjunctive: subjunctive.split('|'), complement, translation,
-});
+import { regular, irregular } from './verb-record.js';
+import { CORE_VERBS, REFLEXIVE_VERBS, IMPERSONAL_VERBS } from './core-verbs.js';
 export const VERBS = [
   regular('parler', 'to speak', 'er', 'français', 'speak French'),
   regular('aimer', 'to like / love', 'er', 'ce livre', 'like this book'),
@@ -58,14 +53,15 @@ export const VERBS = [
   irregular('recevoir', 'to receive', 'reçois|reçois|reçoit|recevons|recevez|reçoivent', 'recevr', 'reçu', 'reçoive|reçoives|reçoive|recevions|receviez|reçoivent', 'une lettre', 'receive a letter'),
   irregular('tenir', 'to hold', 'tiens|tiens|tient|tenons|tenez|tiennent', 'tiendr', 'tenu', 'tienne|tiennes|tienne|tenions|teniez|tiennent', 'ce sac', 'hold this bag'),
   irregular('connaître', 'to know', 'connais|connais|connaît|connaissons|connaissez|connaissent', 'connaîtr', 'connu', 'connaisse|connaisses|connaisse|connaissions|connaissiez|connaissent', 'bien Paris', 'know Paris well'),
+  ...CORE_VERBS, ...REFLEXIVE_VERBS, ...IMPERSONAL_VERBS,
 ];
 // Explicit lexical metadata; group is distinct from the computational pattern.
 for (const v of VERBS) {
   v.group = v.infinitive === 'aller' ? 3 : v.infinitive.endsWith('er') ? 1 : v.pattern === 'ir' ? 2 : 3;
   v.personOrder = ['1s','2s','3s','1p','2p','3p'];
-  v.overrides = {};
+  v.overrides ??= {};
   v.review = {status:'reference-cross-checked', date:'2026-11-03', method:'Authored rules and forms checked against reference tables; independent human review pending', sources:[`https://leconjugueur.lefigaro.fr/conjugaison/verbe/${v.infinitive.normalize('NFD').replace(/[\u0300-\u036f]/g,'')}.html`]};
-  v.notes = '';
+  v.notes ??= '';
 }
 for (const id of ['rester','arriver','entrer']) VERBS.find(v => v.infinitive === id).auxiliary = 'être';
 VERBS.find(v => v.infinitive === 'sortir').notes = 'Intransitive sense: go out, with être. Transitive sortir quelque chose uses avoir and is not represented here.';
@@ -77,4 +73,9 @@ for (const id of ['manger','commencer','acheter','appeler','jeter']) VERBS.find(
 VERBS.find(v => v.infinitive === 'être').imperfectStem = 'ét';
 VERBS.find(v => v.infinitive === 'sortir').review.sources.push('https://www.dictionnaire-academie.fr/conjuguer/A9S2177');
 VERBS.find(v => v.infinitive === 'entrer').notes = 'Intransitive sense: enter a place, with être. Transitive entrer des données uses avoir and is outside this entry.';
+for (const v of REFLEXIVE_VERBS) {
+  const base = VERBS.find(base => base.infinitive === v.baseVerb);
+  v.group = base.group;
+  v.review.sources = [base.review.sources[0].replace('.html','_pronominal.html'),'https://www.academie-francaise.fr/questions-de-langue'];
+}
 export const BY_ID = Object.fromEntries(VERBS.map(v => [v.infinitive, v]));

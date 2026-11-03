@@ -1,4 +1,4 @@
-// Explicit bilingual sentences. Masculine singular speaker in compound examples.
+// Explicit, editable bilingual examples. No runtime sentence generation.
 export const EXAMPLES = {
   "parler": {
     "present": {
@@ -1299,7 +1299,1567 @@ export const EXAMPLES = {
       "french": "Il est possible que je connaisse bien Paris.",
       "english": "It is possible that I know Paris well."
     }
+  },
+  "étudier": {
+    "present": {
+      "french": "En général, j’étudie le français.",
+      "english": "In general, I study French."
+    },
+    "passe": {
+      "french": "Récemment, j’ai étudié le français.",
+      "english": "Recently, I studied French."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’étudiais le français.",
+      "english": "At that time, I used to study French."
+    },
+    "future": {
+      "french": "Un jour, j’étudierai le français.",
+      "english": "One day, I will study French."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’étudierais le français.",
+      "english": "If it were possible, I would study French."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’étudie le français.",
+      "english": "It is possible that I study French."
+    }
+  },
+  "penser": {
+    "present": {
+      "french": "En général, je pense à mon avenir.",
+      "english": "In general, I think about my future."
+    },
+    "passe": {
+      "french": "Récemment, j’ai pensé à mon avenir.",
+      "english": "Recently, I thought about my future."
+    },
+    "imperfect": {
+      "french": "À cette époque, je pensais à mon avenir.",
+      "english": "At that time, I used to think about my future."
+    },
+    "future": {
+      "french": "Un jour, je penserai à mon avenir.",
+      "english": "One day, I will think about my future."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je penserais à mon avenir.",
+      "english": "If it were possible, I would think about my future."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je pense à mon avenir.",
+      "english": "It is possible that I think about my future."
+    }
+  },
+  "passer": {
+    "present": {
+      "french": "En général, je passe du temps ici.",
+      "english": "In general, I spend time here."
+    },
+    "passe": {
+      "french": "Récemment, j’ai passé du temps ici.",
+      "english": "Recently, I spent time here."
+    },
+    "imperfect": {
+      "french": "À cette époque, je passais du temps ici.",
+      "english": "At that time, I used to spend time here."
+    },
+    "future": {
+      "french": "Un jour, je passerai du temps ici.",
+      "english": "One day, I will spend time here."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je passerais du temps ici.",
+      "english": "If it were possible, I would spend time here."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je passe du temps ici.",
+      "english": "It is possible that I spend time here."
+    }
+  },
+  "marcher": {
+    "present": {
+      "french": "En général, je marche dans le parc.",
+      "english": "In general, I walk in the park."
+    },
+    "passe": {
+      "french": "Récemment, j’ai marché dans le parc.",
+      "english": "Recently, I walked in the park."
+    },
+    "imperfect": {
+      "french": "À cette époque, je marchais dans le parc.",
+      "english": "At that time, I used to walk in the park."
+    },
+    "future": {
+      "french": "Un jour, je marcherai dans le parc.",
+      "english": "One day, I will walk in the park."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je marcherais dans le parc.",
+      "english": "If it were possible, I would walk in the park."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je marche dans le parc.",
+      "english": "It is possible that I walk in the park."
+    }
+  },
+  "aider": {
+    "present": {
+      "french": "En général, j’aide mon frère.",
+      "english": "In general, I help my brother."
+    },
+    "passe": {
+      "french": "Récemment, j’ai aidé mon frère.",
+      "english": "Recently, I helped my brother."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’aidais mon frère.",
+      "english": "At that time, I used to help my brother."
+    },
+    "future": {
+      "french": "Un jour, j’aiderai mon frère.",
+      "english": "One day, I will help my brother."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’aiderais mon frère.",
+      "english": "If it were possible, I would help my brother."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’aide mon frère.",
+      "english": "It is possible that I help my brother."
+    }
+  },
+  "utiliser": {
+    "present": {
+      "french": "En général, j’utilise ce dictionnaire.",
+      "english": "In general, I use this dictionary."
+    },
+    "passe": {
+      "french": "Récemment, j’ai utilisé ce dictionnaire.",
+      "english": "Recently, I used this dictionary."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’utilisais ce dictionnaire.",
+      "english": "At that time, I used to use this dictionary."
+    },
+    "future": {
+      "french": "Un jour, j’utiliserai ce dictionnaire.",
+      "english": "One day, I will use this dictionary."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’utiliserais ce dictionnaire.",
+      "english": "If it were possible, I would use this dictionary."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’utilise ce dictionnaire.",
+      "english": "It is possible that I use this dictionary."
+    }
+  },
+  "raconter": {
+    "present": {
+      "french": "En général, je raconte une histoire.",
+      "english": "In general, I tell a story."
+    },
+    "passe": {
+      "french": "Récemment, j’ai raconté une histoire.",
+      "english": "Recently, I told a story."
+    },
+    "imperfect": {
+      "french": "À cette époque, je racontais une histoire.",
+      "english": "At that time, I used to tell a story."
+    },
+    "future": {
+      "french": "Un jour, je raconterai une histoire.",
+      "english": "One day, I will tell a story."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je raconterais une histoire.",
+      "english": "If it were possible, I would tell a story."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je raconte une histoire.",
+      "english": "It is possible that I tell a story."
+    }
+  },
+  "montrer": {
+    "present": {
+      "french": "En général, je montre mon travail.",
+      "english": "In general, I show my work."
+    },
+    "passe": {
+      "french": "Récemment, j’ai montré mon travail.",
+      "english": "Recently, I showed my work."
+    },
+    "imperfect": {
+      "french": "À cette époque, je montrais mon travail.",
+      "english": "At that time, I used to show my work."
+    },
+    "future": {
+      "french": "Un jour, je montrerai mon travail.",
+      "english": "One day, I will show my work."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je montrerais mon travail.",
+      "english": "If it were possible, I would show my work."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je montre mon travail.",
+      "english": "It is possible that I show my work."
+    }
+  },
+  "apporter": {
+    "present": {
+      "french": "En général, j’apporte du pain.",
+      "english": "In general, I bring bread."
+    },
+    "passe": {
+      "french": "Récemment, j’ai apporté du pain.",
+      "english": "Recently, I brought bread."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’apportais du pain.",
+      "english": "At that time, I used to bring bread."
+    },
+    "future": {
+      "french": "Un jour, j’apporterai du pain.",
+      "english": "One day, I will bring bread."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’apporterais du pain.",
+      "english": "If it were possible, I would bring bread."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’apporte du pain.",
+      "english": "It is possible that I bring bread."
+    }
+  },
+  "habiter": {
+    "present": {
+      "french": "En général, j’habite à Lyon.",
+      "english": "In general, I live in Lyon."
+    },
+    "passe": {
+      "french": "Récemment, j’ai habité à Lyon.",
+      "english": "Recently, I lived in Lyon."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’habitais à Lyon.",
+      "english": "At that time, I used to live in Lyon."
+    },
+    "future": {
+      "french": "Un jour, j’habiterai à Lyon.",
+      "english": "One day, I will live in Lyon."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’habiterais à Lyon.",
+      "english": "If it were possible, I would live in Lyon."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’habite à Lyon.",
+      "english": "It is possible that I live in Lyon."
+    }
+  },
+  "visiter": {
+    "present": {
+      "french": "En général, je visite ce musée.",
+      "english": "In general, I visit this museum."
+    },
+    "passe": {
+      "french": "Récemment, j’ai visité ce musée.",
+      "english": "Recently, I visited this museum."
+    },
+    "imperfect": {
+      "french": "À cette époque, je visitais ce musée.",
+      "english": "At that time, I used to visit this museum."
+    },
+    "future": {
+      "french": "Un jour, je visiterai ce musée.",
+      "english": "One day, I will visit this museum."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je visiterais ce musée.",
+      "english": "If it were possible, I would visit this museum."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je visite ce musée.",
+      "english": "It is possible that I visit this museum."
+    }
+  },
+  "déjeuner": {
+    "present": {
+      "french": "En général, je déjeune avec mes amis.",
+      "english": "In general, I have lunch with my friends."
+    },
+    "passe": {
+      "french": "Récemment, j’ai déjeuné avec mes amis.",
+      "english": "Recently, I had lunch with my friends."
+    },
+    "imperfect": {
+      "french": "À cette époque, je déjeunais avec mes amis.",
+      "english": "At that time, I used to have lunch with my friends."
+    },
+    "future": {
+      "french": "Un jour, je déjeunerai avec mes amis.",
+      "english": "One day, I will have lunch with my friends."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je déjeunerais avec mes amis.",
+      "english": "If it were possible, I would have lunch with my friends."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je déjeune avec mes amis.",
+      "english": "It is possible that I have lunch with my friends."
+    }
+  },
+  "dîner": {
+    "present": {
+      "french": "En général, je dîne avec Marie.",
+      "english": "In general, I have dinner with Marie."
+    },
+    "passe": {
+      "french": "Récemment, j’ai dîné avec Marie.",
+      "english": "Recently, I had dinner with Marie."
+    },
+    "imperfect": {
+      "french": "À cette époque, je dînais avec Marie.",
+      "english": "At that time, I used to have dinner with Marie."
+    },
+    "future": {
+      "french": "Un jour, je dînerai avec Marie.",
+      "english": "One day, I will have dinner with Marie."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je dînerais avec Marie.",
+      "english": "If it were possible, I would have dinner with Marie."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je dîne avec Marie.",
+      "english": "It is possible that I have dinner with Marie."
+    }
+  },
+  "préparer": {
+    "present": {
+      "french": "En général, je prépare le dîner.",
+      "english": "In general, I prepare dinner."
+    },
+    "passe": {
+      "french": "Récemment, j’ai préparé le dîner.",
+      "english": "Recently, I prepared dinner."
+    },
+    "imperfect": {
+      "french": "À cette époque, je préparais le dîner.",
+      "english": "At that time, I used to prepare dinner."
+    },
+    "future": {
+      "french": "Un jour, je préparerai le dîner.",
+      "english": "One day, I will prepare dinner."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je préparerais le dîner.",
+      "english": "If it were possible, I would prepare dinner."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je prépare le dîner.",
+      "english": "It is possible that I prepare dinner."
+    }
+  },
+  "fermer": {
+    "present": {
+      "french": "En général, je ferme la porte.",
+      "english": "In general, I close the door."
+    },
+    "passe": {
+      "french": "Récemment, j’ai fermé la porte.",
+      "english": "Recently, I closed the door."
+    },
+    "imperfect": {
+      "french": "À cette époque, je fermais la porte.",
+      "english": "At that time, I used to close the door."
+    },
+    "future": {
+      "french": "Un jour, je fermerai la porte.",
+      "english": "One day, I will close the door."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je fermerais la porte.",
+      "english": "If it were possible, I would close the door."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je ferme la porte.",
+      "english": "It is possible that I close the door."
+    }
+  },
+  "garder": {
+    "present": {
+      "french": "En général, je garde ce livre.",
+      "english": "In general, I keep this book."
+    },
+    "passe": {
+      "french": "Récemment, j’ai gardé ce livre.",
+      "english": "Recently, I kept this book."
+    },
+    "imperfect": {
+      "french": "À cette époque, je gardais ce livre.",
+      "english": "At that time, I used to keep this book."
+    },
+    "future": {
+      "french": "Un jour, je garderai ce livre.",
+      "english": "One day, I will keep this book."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je garderais ce livre.",
+      "english": "If it were possible, I would keep this book."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je garde ce livre.",
+      "english": "It is possible that I keep this book."
+    }
+  },
+  "habiller": {
+    "present": {
+      "french": "En général, j’habille mon fils.",
+      "english": "In general, I dress my son."
+    },
+    "passe": {
+      "french": "Récemment, j’ai habillé mon fils.",
+      "english": "Recently, I dressed my son."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’habillais mon fils.",
+      "english": "At that time, I used to dress my son."
+    },
+    "future": {
+      "french": "Un jour, j’habillerai mon fils.",
+      "english": "One day, I will dress my son."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’habillerais mon fils.",
+      "english": "If it were possible, I would dress my son."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’habille mon fils.",
+      "english": "It is possible that I dress my son."
+    }
+  },
+  "laver": {
+    "present": {
+      "french": "En général, je lave la voiture.",
+      "english": "In general, I wash the car."
+    },
+    "passe": {
+      "french": "Récemment, j’ai lavé la voiture.",
+      "english": "Recently, I washed the car."
+    },
+    "imperfect": {
+      "french": "À cette époque, je lavais la voiture.",
+      "english": "At that time, I used to wash the car."
+    },
+    "future": {
+      "french": "Un jour, je laverai la voiture.",
+      "english": "One day, I will wash the car."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je laverais la voiture.",
+      "english": "If it were possible, I would wash the car."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je lave la voiture.",
+      "english": "It is possible that I wash the car."
+    }
+  },
+  "coucher": {
+    "present": {
+      "french": "En général, je couche mon fils.",
+      "english": "In general, I put my son to bed."
+    },
+    "passe": {
+      "french": "Récemment, j’ai couché mon fils.",
+      "english": "Recently, I put my son to bed."
+    },
+    "imperfect": {
+      "french": "À cette époque, je couchais mon fils.",
+      "english": "At that time, I used to put my son to bed."
+    },
+    "future": {
+      "french": "Un jour, je coucherai mon fils.",
+      "english": "One day, I will put my son to bed."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je coucherais mon fils.",
+      "english": "If it were possible, I would put my son to bed."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je couche mon fils.",
+      "english": "It is possible that I put my son to bed."
+    }
+  },
+  "réveiller": {
+    "present": {
+      "french": "En général, je réveille mon frère.",
+      "english": "In general, I wake my brother."
+    },
+    "passe": {
+      "french": "Récemment, j’ai réveillé mon frère.",
+      "english": "Recently, I woke my brother."
+    },
+    "imperfect": {
+      "french": "À cette époque, je réveillais mon frère.",
+      "english": "At that time, I used to wake my brother."
+    },
+    "future": {
+      "french": "Un jour, je réveillerai mon frère.",
+      "english": "One day, I will wake my brother."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je réveillerais mon frère.",
+      "english": "If it were possible, I would wake my brother."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je réveille mon frère.",
+      "english": "It is possible that I wake my brother."
+    }
+  },
+  "tomber": {
+    "present": {
+      "french": "En général, je tombe par terre.",
+      "english": "In general, I fall to the ground."
+    },
+    "passe": {
+      "french": "Récemment, je suis tombé par terre.",
+      "english": "Recently, I fell to the ground."
+    },
+    "imperfect": {
+      "french": "À cette époque, je tombais par terre.",
+      "english": "At that time, I used to fall to the ground."
+    },
+    "future": {
+      "french": "Un jour, je tomberai par terre.",
+      "english": "One day, I will fall to the ground."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je tomberais par terre.",
+      "english": "If it were possible, I would fall to the ground."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je tombe par terre.",
+      "english": "It is possible that I fall to the ground."
+    }
+  },
+  "quitter": {
+    "present": {
+      "french": "En général, je quitte Paris.",
+      "english": "In general, I leave Paris."
+    },
+    "passe": {
+      "french": "Récemment, j’ai quitté Paris.",
+      "english": "Recently, I left Paris."
+    },
+    "imperfect": {
+      "french": "À cette époque, je quittais Paris.",
+      "english": "At that time, I used to leave Paris."
+    },
+    "future": {
+      "french": "Un jour, je quitterai Paris.",
+      "english": "One day, I will leave Paris."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je quitterais Paris.",
+      "english": "If it were possible, I would leave Paris."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je quitte Paris.",
+      "english": "It is possible that I leave Paris."
+    }
+  },
+  "voyager": {
+    "present": {
+      "french": "En général, je voyage en train.",
+      "english": "In general, I travel by train."
+    },
+    "passe": {
+      "french": "Récemment, j’ai voyagé en train.",
+      "english": "Recently, I traveled by train."
+    },
+    "imperfect": {
+      "french": "À cette époque, je voyageais en train.",
+      "english": "At that time, I used to travel by train."
+    },
+    "future": {
+      "french": "Un jour, je voyagerai en train.",
+      "english": "One day, I will travel by train."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je voyagerais en train.",
+      "english": "If it were possible, I would travel by train."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je voyage en train.",
+      "english": "It is possible that I travel by train."
+    }
+  },
+  "croire": {
+    "present": {
+      "french": "En général, je crois cette histoire.",
+      "english": "In general, I believe this story."
+    },
+    "passe": {
+      "french": "Récemment, j’ai cru cette histoire.",
+      "english": "Recently, I believed this story."
+    },
+    "imperfect": {
+      "french": "À cette époque, je croyais cette histoire.",
+      "english": "At that time, I used to believe this story."
+    },
+    "future": {
+      "french": "Un jour, je croirai cette histoire.",
+      "english": "One day, I will believe this story."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je croirais cette histoire.",
+      "english": "If it were possible, I would believe this story."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je croie cette histoire.",
+      "english": "It is possible that I believe this story."
+    }
+  },
+  "vivre": {
+    "present": {
+      "french": "En général, je vis à Paris.",
+      "english": "In general, I live in Paris."
+    },
+    "passe": {
+      "french": "Récemment, j’ai vécu à Paris.",
+      "english": "Recently, I lived in Paris."
+    },
+    "imperfect": {
+      "french": "À cette époque, je vivais à Paris.",
+      "english": "At that time, I used to live in Paris."
+    },
+    "future": {
+      "french": "Un jour, je vivrai à Paris.",
+      "english": "One day, I will live in Paris."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je vivrais à Paris.",
+      "english": "If it were possible, I would live in Paris."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je vive à Paris.",
+      "english": "It is possible that I live in Paris."
+    }
+  },
+  "suivre": {
+    "present": {
+      "french": "En général, je suis ce cours.",
+      "english": "In general, I take this course."
+    },
+    "passe": {
+      "french": "Récemment, j’ai suivi ce cours.",
+      "english": "Recently, I took this course."
+    },
+    "imperfect": {
+      "french": "À cette époque, je suivais ce cours.",
+      "english": "At that time, I used to take this course."
+    },
+    "future": {
+      "french": "Un jour, je suivrai ce cours.",
+      "english": "One day, I will take this course."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je suivrais ce cours.",
+      "english": "If it were possible, I would take this course."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je suive ce cours.",
+      "english": "It is possible that I take this course."
+    }
+  },
+  "rire": {
+    "present": {
+      "french": "En général, je ris avec mes amis.",
+      "english": "In general, I laugh with my friends."
+    },
+    "passe": {
+      "french": "Récemment, j’ai ri avec mes amis.",
+      "english": "Recently, I laughed with my friends."
+    },
+    "imperfect": {
+      "french": "À cette époque, je riais avec mes amis.",
+      "english": "At that time, I used to laugh with my friends."
+    },
+    "future": {
+      "french": "Un jour, je rirai avec mes amis.",
+      "english": "One day, I will laugh with my friends."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je rirais avec mes amis.",
+      "english": "If it were possible, I would laugh with my friends."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je rie avec mes amis.",
+      "english": "It is possible that I laugh with my friends."
+    }
+  },
+  "ouvrir": {
+    "present": {
+      "french": "En général, j’ouvre la fenêtre.",
+      "english": "In general, I open the window."
+    },
+    "passe": {
+      "french": "Récemment, j’ai ouvert la fenêtre.",
+      "english": "Recently, I opened the window."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’ouvrais la fenêtre.",
+      "english": "At that time, I used to open the window."
+    },
+    "future": {
+      "french": "Un jour, j’ouvrirai la fenêtre.",
+      "english": "One day, I will open the window."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’ouvrirais la fenêtre.",
+      "english": "If it were possible, I would open the window."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’ouvre la fenêtre.",
+      "english": "It is possible that I open the window."
+    }
+  },
+  "offrir": {
+    "present": {
+      "french": "En général, j’offre un cadeau.",
+      "english": "In general, I give a gift."
+    },
+    "passe": {
+      "french": "Récemment, j’ai offert un cadeau.",
+      "english": "Recently, I gave a gift."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’offrais un cadeau.",
+      "english": "At that time, I used to give a gift."
+    },
+    "future": {
+      "french": "Un jour, j’offrirai un cadeau.",
+      "english": "One day, I will give a gift."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’offrirais un cadeau.",
+      "english": "If it were possible, I would give a gift."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’offre un cadeau.",
+      "english": "It is possible that I give a gift."
+    }
+  },
+  "apprendre": {
+    "present": {
+      "french": "En général, j’apprends le français.",
+      "english": "In general, I learn French."
+    },
+    "passe": {
+      "french": "Récemment, j’ai appris le français.",
+      "english": "Recently, I learned French."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’apprenais le français.",
+      "english": "At that time, I used to learn French."
+    },
+    "future": {
+      "french": "Un jour, j’apprendrai le français.",
+      "english": "One day, I will learn French."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’apprendrais le français.",
+      "english": "If it were possible, I would learn French."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’apprenne le français.",
+      "english": "It is possible that I learn French."
+    }
+  },
+  "comprendre": {
+    "present": {
+      "french": "En général, je comprends cette phrase.",
+      "english": "In general, I understand this sentence."
+    },
+    "passe": {
+      "french": "Récemment, j’ai compris cette phrase.",
+      "english": "Recently, I understood this sentence."
+    },
+    "imperfect": {
+      "french": "À cette époque, je comprenais cette phrase.",
+      "english": "At that time, I used to understand this sentence."
+    },
+    "future": {
+      "french": "Un jour, je comprendrai cette phrase.",
+      "english": "One day, I will understand this sentence."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je comprendrais cette phrase.",
+      "english": "If it were possible, I would understand this sentence."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je comprenne cette phrase.",
+      "english": "It is possible that I understand this sentence."
+    }
+  },
+  "conduire": {
+    "present": {
+      "french": "En général, je conduis une voiture.",
+      "english": "In general, I drive a car."
+    },
+    "passe": {
+      "french": "Récemment, j’ai conduit une voiture.",
+      "english": "Recently, I drove a car."
+    },
+    "imperfect": {
+      "french": "À cette époque, je conduisais une voiture.",
+      "english": "At that time, I used to drive a car."
+    },
+    "future": {
+      "french": "Un jour, je conduirai une voiture.",
+      "english": "One day, I will drive a car."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je conduirais une voiture.",
+      "english": "If it were possible, I would drive a car."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je conduise une voiture.",
+      "english": "It is possible that I drive a car."
+    }
+  },
+  "traduire": {
+    "present": {
+      "french": "En général, je traduis ce texte.",
+      "english": "In general, I translate this text."
+    },
+    "passe": {
+      "french": "Récemment, j’ai traduit ce texte.",
+      "english": "Recently, I translated this text."
+    },
+    "imperfect": {
+      "french": "À cette époque, je traduisais ce texte.",
+      "english": "At that time, I used to translate this text."
+    },
+    "future": {
+      "french": "Un jour, je traduirai ce texte.",
+      "english": "One day, I will translate this text."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je traduirais ce texte.",
+      "english": "If it were possible, I would translate this text."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je traduise ce texte.",
+      "english": "It is possible that I translate this text."
+    }
+  },
+  "envoyer": {
+    "present": {
+      "french": "En général, j’envoie une lettre.",
+      "english": "In general, I send a letter."
+    },
+    "passe": {
+      "french": "Récemment, j’ai envoyé une lettre.",
+      "english": "Recently, I sent a letter."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’envoyais une lettre.",
+      "english": "At that time, I used to send a letter."
+    },
+    "future": {
+      "french": "Un jour, j’enverrai une lettre.",
+      "english": "One day, I will send a letter."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’enverrais une lettre.",
+      "english": "If it were possible, I would send a letter."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’envoie une lettre.",
+      "english": "It is possible that I send a letter."
+    }
+  },
+  "payer": {
+    "present": {
+      "french": "En général, je paie le loyer.",
+      "english": "In general, I pay the rent."
+    },
+    "passe": {
+      "french": "Récemment, j’ai payé le loyer.",
+      "english": "Recently, I paid the rent."
+    },
+    "imperfect": {
+      "french": "À cette époque, je payais le loyer.",
+      "english": "At that time, I used to pay the rent."
+    },
+    "future": {
+      "french": "Un jour, je paierai le loyer.",
+      "english": "One day, I will pay the rent."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je paierais le loyer.",
+      "english": "If it were possible, I would pay the rent."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je paie le loyer.",
+      "english": "It is possible that I pay the rent."
+    }
+  },
+  "préférer": {
+    "present": {
+      "french": "En général, je préfère le thé.",
+      "english": "In general, I prefer tea."
+    },
+    "passe": {
+      "french": "Récemment, j’ai préféré le thé.",
+      "english": "Recently, I preferred tea."
+    },
+    "imperfect": {
+      "french": "À cette époque, je préférais le thé.",
+      "english": "At that time, I used to prefer tea."
+    },
+    "future": {
+      "french": "Un jour, je préférerai le thé.",
+      "english": "One day, I will prefer tea."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je préférerais le thé.",
+      "english": "If it were possible, I would prefer tea."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je préfère le thé.",
+      "english": "It is possible that I prefer tea."
+    }
+  },
+  "espérer": {
+    "present": {
+      "french": "En général, j’espère réussir.",
+      "english": "In general, I hope to succeed."
+    },
+    "passe": {
+      "french": "Récemment, j’ai espéré réussir.",
+      "english": "Recently, I hoped to succeed."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’espérais réussir.",
+      "english": "At that time, I used to hope to succeed."
+    },
+    "future": {
+      "french": "Un jour, j’espérerai réussir.",
+      "english": "One day, I will hope to succeed."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’espérerais réussir.",
+      "english": "If it were possible, I would hope to succeed."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’espère réussir.",
+      "english": "It is possible that I hope to succeed."
+    }
+  },
+  "lever": {
+    "present": {
+      "french": "En général, je lève la main.",
+      "english": "In general, I raise my hand."
+    },
+    "passe": {
+      "french": "Récemment, j’ai levé la main.",
+      "english": "Recently, I raised my hand."
+    },
+    "imperfect": {
+      "french": "À cette époque, je levais la main.",
+      "english": "At that time, I used to raise my hand."
+    },
+    "future": {
+      "french": "Un jour, je lèverai la main.",
+      "english": "One day, I will raise my hand."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je lèverais la main.",
+      "english": "If it were possible, I would raise my hand."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je lève la main.",
+      "english": "It is possible that I raise my hand."
+    }
+  },
+  "promener": {
+    "present": {
+      "french": "En général, je promène mon chien.",
+      "english": "In general, I walk my dog."
+    },
+    "passe": {
+      "french": "Récemment, j’ai promené mon chien.",
+      "english": "Recently, I walked my dog."
+    },
+    "imperfect": {
+      "french": "À cette époque, je promenais mon chien.",
+      "english": "At that time, I used to walk my dog."
+    },
+    "future": {
+      "french": "Un jour, je promènerai mon chien.",
+      "english": "One day, I will walk my dog."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je promènerais mon chien.",
+      "english": "If it were possible, I would walk my dog."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je promène mon chien.",
+      "english": "It is possible that I walk my dog."
+    }
+  },
+  "mourir": {
+    "present": {
+      "french": "Sans eau, cette plante meurt.",
+      "english": "Without water, this plant dies."
+    },
+    "passe": {
+      "french": "Cette plante est morte cet été.",
+      "english": "This plant died this summer."
+    },
+    "imperfect": {
+      "french": "Sans eau, les plantes mouraient.",
+      "english": "Without water, the plants were dying."
+    },
+    "future": {
+      "french": "Sans eau, cette plante mourra.",
+      "english": "Without water, this plant will die."
+    },
+    "conditional": {
+      "french": "Sans eau, cette plante mourrait.",
+      "english": "Without water, this plant would die."
+    },
+    "subjunctive": {
+      "french": "Je crains que cette plante meure.",
+      "english": "I am afraid that this plant may die."
+    }
+  },
+  "naître": {
+    "present": {
+      "french": "Chaque jour, des enfants naissent ici.",
+      "english": "Every day, children are born here."
+    },
+    "passe": {
+      "french": "Je suis né à Paris.",
+      "english": "I was born in Paris."
+    },
+    "imperfect": {
+      "french": "À cette époque, les enfants naissaient à la maison.",
+      "english": "At that time, children were born at home."
+    },
+    "future": {
+      "french": "Le bébé naîtra en juin.",
+      "english": "The baby will be born in June."
+    },
+    "conditional": {
+      "french": "Selon le médecin, le bébé naîtrait en juin.",
+      "english": "According to the doctor, the baby would be born in June."
+    },
+    "subjunctive": {
+      "french": "Elle souhaite que son enfant naisse ici.",
+      "english": "She wants her child to be born here."
+    }
+  },
+  "devenir": {
+    "present": {
+      "french": "En général, je deviens médecin.",
+      "english": "In general, I become a doctor."
+    },
+    "passe": {
+      "french": "Récemment, je suis devenu médecin.",
+      "english": "Recently, I became a doctor."
+    },
+    "imperfect": {
+      "french": "À cette époque, je devenais médecin.",
+      "english": "At that time, I used to become a doctor."
+    },
+    "future": {
+      "french": "Un jour, je deviendrai médecin.",
+      "english": "One day, I will become a doctor."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je deviendrais médecin.",
+      "english": "If it were possible, I would become a doctor."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je devienne médecin.",
+      "english": "It is possible that I become a doctor."
+    }
+  },
+  "revenir": {
+    "present": {
+      "french": "En général, je reviens ici.",
+      "english": "In general, I come back here."
+    },
+    "passe": {
+      "french": "Récemment, je suis revenu ici.",
+      "english": "Recently, I came back here."
+    },
+    "imperfect": {
+      "french": "À cette époque, je revenais ici.",
+      "english": "At that time, I used to come back here."
+    },
+    "future": {
+      "french": "Un jour, je reviendrai ici.",
+      "english": "One day, I will come back here."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je reviendrais ici.",
+      "english": "If it were possible, I would come back here."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je revienne ici.",
+      "english": "It is possible that I come back here."
+    }
+  },
+  "obtenir": {
+    "present": {
+      "french": "En général, j’obtiens une réponse.",
+      "english": "In general, I get an answer."
+    },
+    "passe": {
+      "french": "Récemment, j’ai obtenu une réponse.",
+      "english": "Recently, I got an answer."
+    },
+    "imperfect": {
+      "french": "À cette époque, j’obtenais une réponse.",
+      "english": "At that time, I used to get an answer."
+    },
+    "future": {
+      "french": "Un jour, j’obtiendrai une réponse.",
+      "english": "One day, I will get an answer."
+    },
+    "conditional": {
+      "french": "Si c’était possible, j’obtiendrais une réponse.",
+      "english": "If it were possible, I would get an answer."
+    },
+    "subjunctive": {
+      "french": "Il est possible que j’obtienne une réponse.",
+      "english": "It is possible that I get an answer."
+    }
+  },
+  "sentir": {
+    "present": {
+      "french": "En général, je sens le parfum des fleurs.",
+      "english": "In general, I smell the flowers."
+    },
+    "passe": {
+      "french": "Récemment, j’ai senti le parfum des fleurs.",
+      "english": "Recently, I smelled the flowers."
+    },
+    "imperfect": {
+      "french": "À cette époque, je sentais le parfum des fleurs.",
+      "english": "At that time, I used to smell the flowers."
+    },
+    "future": {
+      "french": "Un jour, je sentirai le parfum des fleurs.",
+      "english": "One day, I will smell the flowers."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je sentirais le parfum des fleurs.",
+      "english": "If it were possible, I would smell the flowers."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je sente le parfum des fleurs.",
+      "english": "It is possible that I smell the flowers."
+    }
+  },
+  "servir": {
+    "present": {
+      "french": "En général, je sers le dîner.",
+      "english": "In general, I serve dinner."
+    },
+    "passe": {
+      "french": "Récemment, j’ai servi le dîner.",
+      "english": "Recently, I served dinner."
+    },
+    "imperfect": {
+      "french": "À cette époque, je servais le dîner.",
+      "english": "At that time, I used to serve dinner."
+    },
+    "future": {
+      "french": "Un jour, je servirai le dîner.",
+      "english": "One day, I will serve dinner."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je servirais le dîner.",
+      "english": "If it were possible, I would serve dinner."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je serve le dîner.",
+      "english": "It is possible that I serve dinner."
+    }
+  },
+  "courir": {
+    "present": {
+      "french": "En général, je cours dans le parc.",
+      "english": "In general, I run in the park."
+    },
+    "passe": {
+      "french": "Récemment, j’ai couru dans le parc.",
+      "english": "Recently, I ran in the park."
+    },
+    "imperfect": {
+      "french": "À cette époque, je courais dans le parc.",
+      "english": "At that time, I used to run in the park."
+    },
+    "future": {
+      "french": "Un jour, je courrai dans le parc.",
+      "english": "One day, I will run in the park."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je courrais dans le parc.",
+      "english": "If it were possible, I would run in the park."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je coure dans le parc.",
+      "english": "It is possible that I run in the park."
+    }
+  },
+  "valoir": {
+    "present": {
+      "french": "En général, je vaux mieux que cela.",
+      "english": "In general, I am worth more than that."
+    },
+    "passe": {
+      "french": "Récemment, j’ai valu mieux que cela.",
+      "english": "Recently, I was worth more than that."
+    },
+    "imperfect": {
+      "french": "À cette époque, je valais mieux que cela.",
+      "english": "At that time, I used to be worth more than that."
+    },
+    "future": {
+      "french": "Un jour, je vaudrai mieux que cela.",
+      "english": "One day, I will be worth more than that."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je vaudrais mieux que cela.",
+      "english": "If it were possible, I would be worth more than that."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je vaille mieux que cela.",
+      "english": "It is possible that I am worth more than that."
+    }
+  },
+  "permettre": {
+    "present": {
+      "french": "En général, je permets cette visite.",
+      "english": "In general, I allow this visit."
+    },
+    "passe": {
+      "french": "Récemment, j’ai permis cette visite.",
+      "english": "Recently, I allowed this visit."
+    },
+    "imperfect": {
+      "french": "À cette époque, je permettais cette visite.",
+      "english": "At that time, I used to allow this visit."
+    },
+    "future": {
+      "french": "Un jour, je permettrai cette visite.",
+      "english": "One day, I will allow this visit."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je permettrais cette visite.",
+      "english": "If it were possible, I would allow this visit."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je permette cette visite.",
+      "english": "It is possible that I allow this visit."
+    }
+  },
+  "battre": {
+    "present": {
+      "french": "En général, je bats ce record.",
+      "english": "In general, I beat this record."
+    },
+    "passe": {
+      "french": "Récemment, j’ai battu ce record.",
+      "english": "Recently, I beat this record."
+    },
+    "imperfect": {
+      "french": "À cette époque, je battais ce record.",
+      "english": "At that time, I used to beat this record."
+    },
+    "future": {
+      "french": "Un jour, je battrai ce record.",
+      "english": "One day, I will beat this record."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je battrais ce record.",
+      "english": "If it were possible, I would beat this record."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je batte ce record.",
+      "english": "It is possible that I beat this record."
+    }
+  },
+  "se lever": {
+    "present": {
+      "french": "En général, je me lève à sept heures.",
+      "english": "In general, I get up at seven."
+    },
+    "passe": {
+      "french": "Récemment, je me suis levé à sept heures.",
+      "english": "Recently, I got up at seven."
+    },
+    "imperfect": {
+      "french": "À cette époque, je me levais à sept heures.",
+      "english": "At that time, I used to get up at seven."
+    },
+    "future": {
+      "french": "Un jour, je me lèverai à sept heures.",
+      "english": "One day, I will get up at seven."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je me lèverais à sept heures.",
+      "english": "If it were possible, I would get up at seven."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je me lève à sept heures.",
+      "english": "It is possible that I get up at seven."
+    }
+  },
+  "s’habiller": {
+    "present": {
+      "french": "En général, je m’habille pour sortir.",
+      "english": "In general, I get dressed to go out."
+    },
+    "passe": {
+      "french": "Récemment, je me suis habillé pour sortir.",
+      "english": "Recently, I got dressed to go out."
+    },
+    "imperfect": {
+      "french": "À cette époque, je m’habillais pour sortir.",
+      "english": "At that time, I used to get dressed to go out."
+    },
+    "future": {
+      "french": "Un jour, je m’habillerai pour sortir.",
+      "english": "One day, I will get dressed to go out."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je m’habillerais pour sortir.",
+      "english": "If it were possible, I would get dressed to go out."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je m’habille pour sortir.",
+      "english": "It is possible that I get dressed to go out."
+    }
+  },
+  "se laver": {
+    "present": {
+      "french": "En général, je me lave le matin.",
+      "english": "In general, I wash in the morning."
+    },
+    "passe": {
+      "french": "Récemment, je me suis lavé le matin.",
+      "english": "Recently, I washed in the morning."
+    },
+    "imperfect": {
+      "french": "À cette époque, je me lavais le matin.",
+      "english": "At that time, I used to wash in the morning."
+    },
+    "future": {
+      "french": "Un jour, je me laverai le matin.",
+      "english": "One day, I will wash in the morning."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je me laverais le matin.",
+      "english": "If it were possible, I would wash in the morning."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je me lave le matin.",
+      "english": "It is possible that I wash in the morning."
+    }
+  },
+  "se coucher": {
+    "present": {
+      "french": "En général, je me couche tôt.",
+      "english": "In general, I go to bed early."
+    },
+    "passe": {
+      "french": "Récemment, je me suis couché tôt.",
+      "english": "Recently, I went to bed early."
+    },
+    "imperfect": {
+      "french": "À cette époque, je me couchais tôt.",
+      "english": "At that time, I used to go to bed early."
+    },
+    "future": {
+      "french": "Un jour, je me coucherai tôt.",
+      "english": "One day, I will go to bed early."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je me coucherais tôt.",
+      "english": "If it were possible, I would go to bed early."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je me couche tôt.",
+      "english": "It is possible that I go to bed early."
+    }
+  },
+  "se réveiller": {
+    "present": {
+      "french": "En général, je me réveille tôt.",
+      "english": "In general, I wake up early."
+    },
+    "passe": {
+      "french": "Récemment, je me suis réveillé tôt.",
+      "english": "Recently, I woke up early."
+    },
+    "imperfect": {
+      "french": "À cette époque, je me réveillais tôt.",
+      "english": "At that time, I used to wake up early."
+    },
+    "future": {
+      "french": "Un jour, je me réveillerai tôt.",
+      "english": "One day, I will wake up early."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je me réveillerais tôt.",
+      "english": "If it were possible, I would wake up early."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je me réveille tôt.",
+      "english": "It is possible that I wake up early."
+    }
+  },
+  "se promener": {
+    "present": {
+      "french": "En général, je me promène dans le parc.",
+      "english": "In general, I go for a walk in the park."
+    },
+    "passe": {
+      "french": "Récemment, je me suis promené dans le parc.",
+      "english": "Recently, I went for a walk in the park."
+    },
+    "imperfect": {
+      "french": "À cette époque, je me promenais dans le parc.",
+      "english": "At that time, I used to go for a walk in the park."
+    },
+    "future": {
+      "french": "Un jour, je me promènerai dans le parc.",
+      "english": "One day, I will go for a walk in the park."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je me promènerais dans le parc.",
+      "english": "If it were possible, I would go for a walk in the park."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je me promène dans le parc.",
+      "english": "It is possible that I go for a walk in the park."
+    }
+  },
+  "s’appeler": {
+    "present": {
+      "french": "Je m’appelle Alex.",
+      "english": "My name is Alex."
+    },
+    "passe": {
+      "french": "Pendant le jeu, je me suis appelé Alex.",
+      "english": "During the game, I called myself Alex."
+    },
+    "imperfect": {
+      "french": "Dans cette histoire, je m’appelais Alex.",
+      "english": "In that story, my name was Alex."
+    },
+    "future": {
+      "french": "Dans le prochain jeu, je m’appellerai Alex.",
+      "english": "In the next game, I will call myself Alex."
+    },
+    "conditional": {
+      "french": "Dans ce jeu, je m’appellerais Alex.",
+      "english": "In that game, I would call myself Alex."
+    },
+    "subjunctive": {
+      "french": "Il est possible que ce personnage s’appelle Alex.",
+      "english": "This character may be called Alex."
+    }
+  },
+  "se préparer": {
+    "present": {
+      "french": "En général, je me prépare pour le voyage.",
+      "english": "In general, I get ready for the trip."
+    },
+    "passe": {
+      "french": "Récemment, je me suis préparé pour le voyage.",
+      "english": "Recently, I got ready for the trip."
+    },
+    "imperfect": {
+      "french": "À cette époque, je me préparais pour le voyage.",
+      "english": "At that time, I used to get ready for the trip."
+    },
+    "future": {
+      "french": "Un jour, je me préparerai pour le voyage.",
+      "english": "One day, I will get ready for the trip."
+    },
+    "conditional": {
+      "french": "Si c’était possible, je me préparerais pour le voyage.",
+      "english": "If it were possible, I would get ready for the trip."
+    },
+    "subjunctive": {
+      "french": "Il est possible que je me prépare pour le voyage.",
+      "english": "It is possible that I get ready for the trip."
+    }
+  },
+  "falloir": {
+    "present": {
+      "french": "Il faut partir maintenant.",
+      "english": "It is necessary to leave now."
+    },
+    "passe": {
+      "french": "Il a fallu attendre une heure.",
+      "english": "We had to wait an hour."
+    },
+    "imperfect": {
+      "french": "Il fallait travailler chaque soir.",
+      "english": "We had to work every evening."
+    },
+    "future": {
+      "french": "Il faudra réserver une table.",
+      "english": "We will have to book a table."
+    },
+    "conditional": {
+      "french": "Il faudrait partir plus tôt.",
+      "english": "We should leave earlier."
+    },
+    "subjunctive": {
+      "french": "Je crains qu’il faille annuler le voyage.",
+      "english": "I am afraid we may have to cancel the trip."
+    }
+  },
+  "pleuvoir": {
+    "present": {
+      "french": "Il pleut ce matin.",
+      "english": "It is raining this morning."
+    },
+    "passe": {
+      "french": "Il a plu toute la nuit.",
+      "english": "It rained all night."
+    },
+    "imperfect": {
+      "french": "Il pleuvait quand je suis sorti.",
+      "english": "It was raining when I went out."
+    },
+    "future": {
+      "french": "Il pleuvra demain.",
+      "english": "It will rain tomorrow."
+    },
+    "conditional": {
+      "french": "Sans ce vent, il pleuvrait davantage.",
+      "english": "Without this wind, it would rain more."
+    },
+    "subjunctive": {
+      "french": "Il est possible qu’il pleuve demain.",
+      "english": "It may rain tomorrow."
+    }
   }
 };
 
-export const EXAMPLE_REVIEW = { status: "authored-and-editorially-reviewed", date: "2026-11-03", reviewer: "Codex", independentHumanReview: false, scope: "All 300 French/English pairs; masculine singular speaker; no preceding direct object" };
+export const EXAMPLE_REVIEW = {status:"authored-and-editorially-reviewed",date:"2026-11-03",reviewer:"Codex",independentHumanReview:false,scope:"All 660 bilingual pairs; masculine singular speaker unless an explicit subject says otherwise; supported senses only"};

@@ -43,7 +43,7 @@ test('reverse lookup handles accents, apostrophes, agreement, and ambiguity', ()
   assert.deepEqual(search("j'ai parlé"),['parler']);
   assert.deepEqual(search('j’ai parlé'),['parler']);
   assert.deepEqual(search('sommes venues'),['venir']);
-  assert.deepEqual(search('suis'),['être']);
+  assert.deepEqual(search('suis'),['être','suivre']);
   assert.deepEqual(search('parl'),['parler']);
   assert.ok(search('aime').includes('aimer'));
   assert.deepEqual(search('unsupported'),[]);
@@ -67,5 +67,5 @@ test('unsupported verbs and invalid saved data do not invent conjugations', () =
   assert.throws(() => conjugate('unsupported','present'));
   assert.throws(() => conjugate('__proto__','present'));
   assert.throws(() => conjugate('parler','toString'));
-  assert.deepEqual(sanitize({selected:'toString',tense:'__proto__',bookmarks:['être','être','unknown'],recent:'invalid'}),{selected:'parler',tense:'present',bookmarks:['être'],recent:[]});
+  assert.deepEqual(sanitize({selected:'toString',tense:'__proto__',bookmarks:['être','être','unknown'],recent:'invalid'}),{theme:'auto',selected:'parler',tense:'present',bookmarks:['être'],recent:[]});
 });

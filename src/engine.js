@@ -6,10 +6,26 @@ const endings = {
   er: ['e','es','e','ons','ez','ent'], ir: ['is','is','it','issons','issez','issent'], re: ['s','s','','ons','ez','ent'],
   imperfect: ['ais','ais','ait','ions','iez','aient'], future: ['ai','as','a','ons','ez','ont'], subjunctive: ['e','es','e','ions','iez','ent'],
 };
+const agreement = ['(e)','(e)','(e)','(e)s','(e)(s)','(e)s'];
+const elides = form => /^[aeiouyàâéèêëîïôùûüœ]/i.test(form) || /^h(?:abit|abill)/i.test(form);
+const reflexivePronouns = ['me','te','se','nous','vous','se'];
+const withReflexive = (i,form) => {
+  const p = reflexivePronouns[i];
+  return i !== 3 && i !== 4 && elides(form) ? p.slice(0,-1)+'’'+form : p+' '+form;
+};
 const part = (stem, ending = '') => ({stem, ending, text: stem + ending});
 export function conjugate(id, tense) {
   const v = BY_ID[id];
   if (!Object.hasOwn(BY_ID,id) || !Object.hasOwn(TENSES,tense)) throw new Error('Unsupported verb or tense');
+  if (v.pattern === 'impersonal') return PRONOUNS.map((_,i) => i === 2 ? {...part(v.impersonalForms[tense]),available:true} : {...part('—'),available:false});
+  if (v.pattern === 'reflexive') {
+    if (tense === 'passe') {
+      const base = BY_ID[v.baseVerb];
+      const pp = base.participle ?? v.baseVerb.slice(0,-2) + ({er:'é',ir:'i',re:'u'}[base.pattern]);
+      return conjugate('être','present').map((f,i) => part(withReflexive(i,f.text)+' ',pp+agreement[i]));
+    }
+    return conjugate(v.baseVerb,tense).map((f,i) => ({...f,stem:withReflexive(i,f.stem),text:withReflexive(i,f.text)}));
+  }
   if (v.overrides?.[tense]) return v.overrides[tense].map(s => part(s));
   const root = id.slice(0,-2);
   if (tense === 'present') return v.present ? v.present.map(s => part(s)) : endings[v.pattern].map(e => part(root,e));
@@ -17,8 +33,8 @@ export function conjugate(id, tense) {
     const auxiliary = conjugate(v.auxiliary,'present');
     const pp = v.participle ?? root + ({er:'é',ir:'i',re:'u'}[v.pattern]);
     return auxiliary.map((a,i) => {
-      const agreement = v.auxiliary === 'être' ? ['(e)','(e)','(e)','(e)s','(e)(s)','(e)s'][i] : '';
-      return part(a.text + ' ', pp + agreement);
+      const suffix = v.auxiliary === 'être' ? agreement[i] : '';
+      return part(a.text + ' ', pp + suffix);
     });
   }
   if (tense === 'imperfect') {
@@ -34,7 +50,7 @@ export function conjugate(id, tense) {
   return endings.subjunctive.map((e,i) => part(present[i === 3 || i === 4 ? 3 : 5].text.slice(0,-3),e));
 }
 export function subject(index, form) {
-  return index === 0 && /^[aeiouyàâéèêëîïôùûüœ]/i.test(form) ? 'j’' : PRONOUNS[index];
+  return index === 0 && elides(form) ? 'j’' : PRONOUNS[index];
 }
 export function phrase(index, form) { const p = subject(index, form); return p + (p === 'j’' ? '' : ' ') + form; }
 export const normalize = s => s.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’']/g,"'").replace(/\s+/g,' ').replace(/\s*'\s*/g,"'");
@@ -53,12 +69,13 @@ const add = (key, match) => {
 };
 for (const v of VERBS) for (const tense of Object.keys(TENSES)) {
   conjugate(v.infinitive,tense).forEach((f,i) => {
+    if (f.available === false) return;
     for (const e of ['', 'e']) for (const s of ['', 's']) {
       const form = f.text.replace(/\(e\)/g,e).replace(/\(s\)/g,s);
       const match = {infinitive:v.infinitive,tense,mood:TENSES[tense].mood,personIndex:i,...PERSONS[i],form};
-      add(form,match); add(phrase(i,form),match);
+      add(form,match); add(v.pattern === 'impersonal' ? 'il '+form : phrase(i,form),match);
       // Natural individual pronouns as well as the compact table labels.
-      for (const pronoun of i === 2 ? ['il','elle','on'] : i === 5 ? ['ils','elles'] : []) add(pronoun+' '+form,match);
+      for (const pronoun of v.pattern === 'impersonal' ? [] : i === 2 ? ['il','elle','on'] : i === 5 ? ['ils','elles'] : []) add(pronoun+' '+form,match);
     }
   });
 }
@@ -76,6 +93,8 @@ export function example(id, tense) {
 }
 export function formation(id, tense) {
   const v = BY_ID[id], f = conjugate(id,tense)[0];
+  if (v.pattern === 'impersonal') return `Use impersonal il: ${v.impersonalForms[tense]}. ${v.notes}`;
+  if (v.pattern === 'reflexive') return `Place me, te, se, nous, vous, se before the conjugated verb (m’, t’, s’ before a vowel or mute h). ${tense === 'passe' ? 'Use être in the present + the base verb’s past participle.' : formation(v.baseVerb,tense)} ${v.notes}`;
   let rule;
   if (tense === 'passe') rule = `Present of ${v.auxiliary} + past participle ${v.participle ?? f.ending}. With être, agree with the subject. With avoir, agreement requires a preceding direct object; these tables have none.`;
   else if (v.overrides?.[tense]) rule = 'Explicit spelling-sensitive forms: compare all six persons rather than using one unchanging stem.';
