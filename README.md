@@ -13,6 +13,22 @@ You get **7,776 verbs offline**: **110 learning entries** with six tenses and **
 
 Enjoying your little French companion? [Give VerbeFlow a star on GitHub](https://github.com/zunaaaaayed/VerbeFlow) ⭐ It helps other learners find it!
 
+## Find your way around
+
+New here? Start with installation. Already settled in? Jump straight to the verbs.
+
+- [Install VerbeFlow](#install-it-one-click-at-a-time)
+- [Check browser compatibility](#which-browsers-can-join-the-party)
+- [Install with the terminal — macOS, Windows or Linux](#feeling-techie-take-the-terminal-route)
+- [Find a verb](#find-a-verb)
+- [Save your favourites](#keep-your-favourites)
+- [Switch light and dark mode](#choose-your-lighting)
+- [Listen to French pronunciation](#hear-a-little-french)
+- [Update VerbeFlow or get help](#updates-and-little-hiccups)
+- [Explore the sources and artwork](#where-the-words-and-artwork-come-from)
+- [Read about privacy](#privacy)
+- [Read the legal details](#legal)
+
 ## Install it, one click at a time
 
 You’ll need a **desktop browser with extension side panels**, on **Windows, macOS, or Linux**. These steps are for the downloadable version, which you add to your browser yourself.
