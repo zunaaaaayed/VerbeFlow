@@ -15,25 +15,18 @@ Enjoying your little French companion? [Give VerbeFlow a star on GitHub](https:/
 
 ## Find your way around
 
-New here? Start with installation. Already settled in? Jump straight to the verbs.
+New here? Check your browser, get settled in, then let the verbs do their thing.
 
-- [Install VerbeFlow](#install-it-one-click-at-a-time)
-- [Check browser compatibility](#which-browsers-can-join-the-party)
-- [Install with the terminal — macOS, Windows or Linux](#feeling-techie-take-the-terminal-route)
-- [Find a verb](#find-a-verb)
-- [Save your favourites](#keep-your-favourites)
-- [Switch light and dark mode](#choose-your-lighting)
-- [Listen to French pronunciation](#hear-a-little-french)
-- [Update VerbeFlow or get help](#updates-and-little-hiccups)
-- [Explore the sources and artwork](#where-the-words-and-artwork-come-from)
-- [Read about privacy](#privacy)
-- [Read the legal details](#legal)
+| Get started | Learn & practise | Good to know |
+| :--- | :--- | :--- |
+| [Browser compatibility](#browser-compatibility) | [Find a verb](#find-a-verb) | [Sources & artwork](#where-the-words-and-artwork-come-from) |
+| [Install step by step](#install-it-one-click-at-a-time) | [Save your favourites](#keep-your-favourites) | [Privacy](#privacy) |
+| [Install with the terminal](#feeling-techie-take-the-terminal-route) | [Light & dark mode](#choose-your-lighting) | [Legal details](#legal) |
+| [Update VerbeFlow](#install-an-update) | [French pronunciation](#hear-a-little-french) | [Get help](#cant-find-it) |
 
-## Install it, one click at a time
+## Browser compatibility
 
-You’ll need a **desktop browser with extension side panels**, on **Windows, macOS, or Linux**. These steps are for the downloadable version, which you add to your browser yourself.
-
-### Which browsers can join the party?
+You’ll need a **desktop browser with extension side panels**, on **Windows, macOS, or Linux**.
 
 **Chrome** is the browser used for VerbeFlow’s hands-on checks so far. Use an up-to-date version; this release needs Chrome 116 or newer.
 
@@ -41,7 +34,9 @@ You’ll need a **desktop browser with extension side panels**, on **Windows, ma
 
 Sharing the Chromium family tree does not guarantee every browser has the same features. **Opera and other Chromium browsers are not confirmed for this release.** A regular browser sidebar is not always the same as an extension side panel. This version is not intended for Firefox, Safari, or mobile browsers.
 
-In the installation steps, use the Extensions page for your browser:
+## Install it, one click at a time
+
+These steps are for the downloadable version, which you add to your browser yourself. Choose a browser from the [compatibility section](#browser-compatibility) above, then find its Extensions page:
 
 - **Chrome or Chromium:** type **chrome://extensions** in the address bar.
 - **Microsoft Edge:** type **edge://extensions**.
