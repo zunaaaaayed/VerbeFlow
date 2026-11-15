@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {mkdir,cp,readFile,writeFile,rm} from 'node:fs/promises';
 const root=new URL('../',import.meta.url), out=new URL('./dist/VerbeFlow/',import.meta.url);
 await rm(new URL('./dist/',import.meta.url),{recursive:true,force:true});
@@ -14,3 +15,13 @@ for(const dir of ['fonts','brand']) await cp(new URL('assets/'+dir+'/',root),new
 await mkdir(new URL('legal/',out),{recursive:true});
 for(const [from,to] of [['LICENSE','LICENSE.txt'],['NOTICE','NOTICE.txt'],['vendor/lefff/LICENSE-LGPLLR.txt','LGPLLR.txt']]) await cp(new URL(from,root),new URL('legal/'+to,out));
 console.log('Built website/dist/VerbeFlow (serve website/dist to test the production base path).');
+
+// Immutable stylesheet names prevent old CSS being paired with updated HTML.
+const css = await readFile(new URL('site/style.css',out));
+const cssName = 'style.'+createHash('sha256').update(css).digest('hex').slice(0,12)+'.css';
+await writeFile(new URL('site/'+cssName,out),css);
+await rm(new URL('site/style.css',out));
+for(const page of ['index.html','privacy.html']) {
+ const path=new URL(page,out);
+ await writeFile(path,(await readFile(path,'utf8')).replace('./site/style.css','./site/'+cssName));
+}
