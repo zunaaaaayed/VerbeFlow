@@ -8,7 +8,7 @@ Start with a small unlisted test before making the listing public.
 
 - Test the published extension ZIP in a clean Chrome profile. Check search,
   saved verbs, six-tense learning entries, five-tense reference entries,
-  French voice availability, manual themes and permission-denied Auto behavior.
+  French voice availability, manual themes and browser/system Auto behavior.
 - Keep listing claims precise: 7,776 offline verbs does not mean that every
   entry has six tenses, English meanings or bilingual examples. The imported
   reference library still needs independent human linguistic review.
@@ -32,8 +32,8 @@ Start with a small unlisted test before making the listing public.
    screenshots and support details. Use the 110 learning / 7,666 reference split.
 5. Complete **Privacy practices**, including the single purpose, every permission
    justification, remote-code declaration and data-use disclosures. Disclose
-   local screenshot processing accurately; do not assume that no server upload
-   means that no website content is accessed or processed.
+   the actual submitted version accurately; current themes use browser/system
+   preference without reading webpages.
 6. Add the privacy policy URL. Confirm that the disclosures match both the
    policy and extension behavior.
 7. Complete distribution and account/trader fields requested by the dashboard.
@@ -48,16 +48,10 @@ Start with a small unlisted test before making the listing public.
 - `sidePanel`: displays the French verb learning/reference interface beside the page.
 - `storage`: saves the chosen verb, tense, theme and at most ten bookmarked verbs locally.
 - `tts`: reads the displayed French learning example with a French voice.
-- `activeTab`: enables temporary access for local light/dark classification after
-  the user clicks the toolbar action.
-- Optional `<all_urls>`: lets the explicitly enabled Auto appearance feature
-  classify the visible active tab across websites. Screenshots stay local and
-  are discarded. Manual appearance requires no screenshot sampling.
 - Remote code: none. All JavaScript, fonts and conjugation data are packaged.
 
 Keep explanations factual. Google decides whether permissions are justified;
-its approval is not guaranteed. Consider simplifying automatic appearance if
-this permission proves disproportionate to the learning purpose during review.
+its approval is not guaranteed. The current manifest no longer requests activeTab or optional host access.
 
 Official guides: [prepare the ZIP](https://developer.chrome.com/docs/webstore/prepare),
 [publish](https://developer.chrome.com/docs/webstore/publish/), and

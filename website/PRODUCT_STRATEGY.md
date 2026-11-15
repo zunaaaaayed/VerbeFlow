@@ -11,10 +11,7 @@ free. Explore Pro for personal collections, retrieval quizzes, spaced repetition
 and progress history. None of these proposed practice features exists yet.
 
 ## Experimental pricing
-€3.99/month and €19 lifetime are research anchors, not purchasable offers.
-Lifetime is about five months of subscription revenue and could undermine
-recurring income; test it separately, cap a founding offer if pursued, and avoid
-promising indefinite service without a cost plan. At €3.99, €50–300 gross/month
+€3.99/month is a research anchor, not a purchasable offer. At €3.99, €50–300 gross/month
 would require roughly 13–76 active monthly subscribers, before fees, taxes,
 refunds and churn. This is arithmetic, not a revenue forecast.
 
@@ -28,7 +25,7 @@ retention. Manual extension installation is a significant acquisition barrier.
 ## Thirty-day validation
 Days 1–7: interview 8–10 learners, observe installation and lookup, fix friction.
 Days 8–14: recruit 15–20 voluntary testers; ask which practice problem they have.
-Days 15–21: show a clickable quiz/collection prototype and both price hypotheses.
+Days 15–21: show a clickable quiz/collection prototype and the monthly price hypothesis.
 Days 22–30: seek explicit willingness to pay and a second week of voluntary use.
 Do not charge or accept preorders in this phase.
 
@@ -52,7 +49,7 @@ and support is a real cost even with no hosting bill.
 
 Primary risks: incomplete independent language review; reference-only entries
 lack meanings/examples/compound auxiliaries; manual installation; unclear paid
-value; lifetime support liability; browser/voice differences; licensed data
-redistribution; and optional screenshot permissions reducing trust. Prioritize
+value; ongoing support costs; browser/voice differences; licensed data
+redistribution; and incomplete content review. Prioritize
 content quality and evidence of repeated practice demand before payments or
 accounts. Do not reclassify existing free favourites as a new paid feature.

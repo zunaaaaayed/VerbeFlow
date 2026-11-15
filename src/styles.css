@@ -165,7 +165,7 @@ footer { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 18px;
 :root[data-logo="white"] .creator-logo-white { display: block; }
 :root[data-logo="black"] .creator-logo-black { display: block; }
 :root[data-logo="black"] .creator-logo-white { display: none; }
-#page-detection { margin: 0 auto; display: block; }
+
 @media (max-width: 300px) {
   .form-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .form-row strong { font-size: 22px; }

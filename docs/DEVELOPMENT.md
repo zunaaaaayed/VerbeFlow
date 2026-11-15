@@ -49,7 +49,7 @@ reference bookmarks persist, and quarantined `clore` stays unsupported.
 - `src/validate.js`: dataset completeness and contract validation.
 - `src/storage.js`: sanitization, key-level persistence and cross-surface subscriptions.
 - `src/app.js`, `src/styles.css`: accessible side-panel interface and large conjugation rows.
-- `src/background.js`: direct toolbar opening and local light/dark screenshot classification.
+- `src/background.js`: direct toolbar opening without page access.
 - `src/colors.js`, `src/page-theme.js`: fixed theme selection, optional automatic detection and active-tab refresh.
 - `src/speech.js`: strict French voice selection through native Chrome TTS, with Web Speech for previews.
 
@@ -126,3 +126,13 @@ release with SHA-256 checksums and `docs/RELEASE_NOTES.md`. Push a version tag
 only when the release is intended to be public. This workflow does not upload
 to the Chrome Web Store. Increment both manifest and package versions for the
 next release and update the user download filename and release notes.
+
+## Appearance simplification — 15 November 2026
+
+Screenshot-based theme detection and its permissions have been removed. Earlier
+smoke-test notes above describe historical builds. Current Auto follows only
+browser/system appearance; manual theme choices retain storage synchronization.
+Test system changes in Auto, manual override, reload, and returning to Auto.
+No activeTab or optional host access is needed. The prior v0.2.0 download is an
+older release; a new extension release is required to deliver this change to
+ZIP users. Do not claim the old download has changed.

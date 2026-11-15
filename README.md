@@ -49,15 +49,15 @@ The steps below use Chrome’s button names. Other browsers may word things slig
 
 1. Open the [latest VerbeFlow release](https://github.com/zunaaaaayed/VerbeFlow/releases/latest).
 2. Scroll to **Assets** at the bottom of the release notes. Click **Assets** if the list is folded shut.
-3. Click **VerbeFlow-0.2.0.zip**. This is the ready-to-install download.
+3. Click **VerbeFlow-0.2.1.zip**. This is the ready-to-install download.
 4. Open your computer’s **Downloads** folder.
 
 Choose the ZIP named **VerbeFlow**, followed by its version number. The files named **source** or **Source code** are the bigger project downloads for people who want to explore or change the code. You don’t need those to install the extension.
 
 ### 2. Unpack it and give it a home
 
-1. Find **VerbeFlow-0.2.0.zip** in **Downloads**.
-2. On a **Mac**, double-click it. A folder named **VerbeFlow-0.2.0** should appear beside it.
+1. Find **VerbeFlow-0.2.1.zip** in **Downloads**.
+2. On a **Mac**, double-click it. A folder named **VerbeFlow-0.2.1** should appear beside it.
 3. On **Windows**, right-click the ZIP, choose **Extract All**, keep the suggested new folder, then click **Extract**.
 4. On **Linux**, right-click the ZIP, choose **Extract To** or **Extract**, and create a new folder named **VerbeFlow** as the destination. Avoid extracting loose files into Downloads.
 5. Move the unpacked folder somewhere you’ll keep it, such as **Documents** or your **Home** folder. You can rename it **VerbeFlow** to keep things tidy.
@@ -202,11 +202,8 @@ There’s room for **10 saved verbs**. When your shelf is full, remove one to ma
 
 1. Click the **sun or moon** at the top of VerbeFlow to switch between light and dark mode.
 2. Your choice stays selected when you change pages or reopen your browser.
-3. Click **Auto**, beside the switch, to let VerbeFlow follow whether the current page is light or dark.
-4. For this to work automatically across different websites, click **Enable automatic page detection** at the bottom of the panel and review Chrome’s permission request.
-5. You can decline that request and keep using the manual switch. Where page detection is unavailable, Auto follows your browser’s light or dark preference.
-
-Both modes use VerbeFlow’s own colours. Your webpage only helps choose which mode to show.
+3. Click **Auto**, beside the switch, to follow your browser or system’s light/dark preference.
+4. No webpage access or screenshots are needed for either mode.
 
 ### Hear a little French
 
@@ -255,7 +252,7 @@ The book-shaped V logo was created with OpenAI’s image-generation tool. The ty
 
 Your selected verb, tense, theme, and saved verbs stay in Chrome on your computer. VerbeFlow has no account system or analytics service.
 
-When automatic page detection is active, VerbeFlow briefly processes a small screenshot of the visible page on your computer to decide whether it is light or dark. Those screenshots are not saved or sent anywhere. Manual light/dark mode does not sample the page. Chrome asks for additional website access before automatic detection can follow you across sites. You can review or revoke that access through Chrome’s extension settings.
+Theme selection uses only your manual choice or the browser/system appearance preference. The current extension does not capture screenshots or inspect webpage content. Older installed releases keep their previous behavior until updated.
 
 French speech is provided by the voices available on your computer or in Chrome. A voice provider’s own connectivity and privacy behaviour may vary.
 
@@ -280,16 +277,3 @@ VerbeFlow is provided **without warranty**, including without any warranty of li
 ---
 
 <p align="center">Built with ♡ by <a href="https://zunaaaaayed.github.io">Zunayed</a></p>
-
-## Website development and deployment
-
-The upcoming public website lives separately in **website/**. Run
-`npm --prefix website test`, then `npm --prefix website run build` and
-`npm --prefix website run preview`. Open **http://127.0.0.1:4173/VerbeFlow/**.
-No dependency installation is needed. The extension still uses its existing
-commands and installation steps.
-
-See [website setup and Pages instructions](website/README.md) and
-[the proposed Pro strategy](website/PRODUCT_STRATEGY.md). Pages must be enabled
-in repository Settings with **GitHub Actions** as its source. The deployment
-workflow is manual; do not run it until the website changes are approved.

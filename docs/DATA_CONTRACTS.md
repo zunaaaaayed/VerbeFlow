@@ -77,8 +77,14 @@ duplicate decisions, and unresolved curated/source differences.
 
 ## Panel, color and speech boundaries
 
-The action has no popup. `background.js` opens the side panel directly in the toolbar click handler. Page detection is separate from opening so it cannot consume the user gesture. In Auto mode, the panel requests a local visible-tab screenshot; the worker returns only `scheme: 'light' | 'dark' | null`. It classifies the majority of opaque sampled pixels by relative luminance, rather than copying colors. Pixel data is discarded, not persisted. Tab IDs are checked before/after capture and stale panel requests are ignored. Only packaged side-panel senders may request captures.
+The action has no popup. `background.js` opens the side panel directly in the
+click handler. No tab queries, capture requests, screenshot processing, host
+permissions or appearance-related messaging remain. Required permissions are
+storage, sidePanel and tts.
 
-`colors.js` contains pure luminance/classification and preference resolution. `page-theme.js` sets a fixed `data-theme` and logo; all UI colors come from the supplied palette in CSS. `theme` is stored as `auto` (default), `light`, or `dark`; invalid/older values become `auto`. The header toggle chooses the opposite of the currently displayed theme and persists that manual override. The Auto button clears the override. Manual mode performs no screenshot requests and ignores any in-flight automatic result. Open sessions synchronize the preference through storage events. Temporary activeTab access needs a toolbar gesture; cross-tab automatic detection uses explicitly requested optional `<all_urls>` access. Without access, Auto follows the browser’s color preference; manual controls remain available.
+`page-theme.js` follows `prefers-color-scheme` in Auto and supports persistent
+manual choices via the existing validated state. It uses no Chrome APIs.
+Changes to the browser/system appearance update Auto immediately; manual choices
+ignore them. `colors.js` retains contrast helpers and theme resolution only.
 
 `speech.js` filters voices by a strict French language tag, prefers local French voices, and passes both the exact voice name and language to Chrome TTS. It never defaults to an English voice when French is unavailable. Browser previews use an explicitly bound French Web Speech voice. This does not validate a third-party engine’s actual pronunciation or correct mislabeled OS voice data.
