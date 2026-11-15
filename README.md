@@ -280,3 +280,16 @@ VerbeFlow is provided **without warranty**, including without any warranty of li
 ---
 
 <p align="center">Built with ♡ by <a href="https://zunaaaaayed.github.io">Zunayed</a></p>
+
+## Website development and deployment
+
+The upcoming public website lives separately in **website/**. Run
+`npm --prefix website test`, then `npm --prefix website run build` and
+`npm --prefix website run preview`. Open **http://127.0.0.1:4173/VerbeFlow/**.
+No dependency installation is needed. The extension still uses its existing
+commands and installation steps.
+
+See [website setup and Pages instructions](website/README.md) and
+[the proposed Pro strategy](website/PRODUCT_STRATEGY.md). Pages must be enabled
+in repository Settings with **GitHub Actions** as its source. The deployment
+workflow is manual; do not run it until the website changes are approved.
